@@ -5,3 +5,8 @@ h1, p {
 li:hover {
     background-color: rgba(53, 100, 6, 0.438);
 }
+
+li:active {
+    color: rgb(255, 230, 0);
+    text-decoration: none;
+}
