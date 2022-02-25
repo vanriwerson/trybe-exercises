@@ -2,7 +2,7 @@ h1, h3 {
     color: red;
 }
 
-.italico {
+h1 em {
     font-size: 40px;
     border: 1px solid black;
 }
@@ -17,4 +17,12 @@ ol li:nth-of-type(2n) {
 
 ol li:nth-of-type(2n+1) {
     text-transform: uppercase;
+}
+
+li {
+    font-size: 20px;
+}
+
+li em {
+    font-weight: bold;
 }
