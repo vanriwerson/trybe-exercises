@@ -1,0 +1,23 @@
+body {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 65px;
+    color: orange;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.heavy-bg {
+    background-color: darkcyan;
+}
+
+p{
+    font-weight: 600;
+    font-size: 3em;
+    line-height: 1.5em;
+    font-style: italic;
+}
