@@ -3,6 +3,10 @@
 4 - Faça a terceira div ser maior que as demais.
 5 - Deixe as tags ímpares h3 com o texto em itálico.*/
 
+div {
+    height: 50px;
+    width: 200px;
+}
 div:hover {
     border: 1px solid black;
 }
@@ -17,6 +21,7 @@ div:nth-of-type(2) {
 
 div:nth-of-type(3) {
     background-color: chartreuse;
+    width: 400px;
 }
 
 div:nth-of-type(4) {
@@ -44,7 +49,7 @@ div:nth-of-type(3) h3{
 
 div:nth-of-type(4) h3{
     color: darkgreen;
-    font-weight: bold;
+    text-decoration: underline;
 }
 
 div:nth-of-type(5) h3{
