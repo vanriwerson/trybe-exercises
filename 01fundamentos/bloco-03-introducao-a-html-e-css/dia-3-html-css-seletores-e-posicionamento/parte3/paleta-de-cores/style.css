@@ -1,9 +1,28 @@
 /*
-2 - Faça cada div ter uma cor própria.
 3 - Estilize cada uma das tags h3 .
 4 - Faça a terceira div ser maior que as demais.
 5 - Deixe as tags ímpares h3 com o texto em itálico.*/
 
 div:hover {
     border: 1px solid black;
+}
+
+div:nth-child(1n) {
+    background-color: aqua;
+}
+
+div:nth-child(2n) {
+    background-color: blueviolet;
+}
+
+div:nth-child(3n) {
+    background-color: chartreuse;
+}
+
+div:nth-child(4n) {
+    background-color: goldenrod;
+}
+
+div:nth-child(5n) {
+    background-color: darkblue;
 }
