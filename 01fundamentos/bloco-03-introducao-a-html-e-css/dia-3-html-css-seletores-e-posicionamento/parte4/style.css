@@ -34,3 +34,28 @@ li em {
 .linguagens li:nth-last-child(-n+2) {
     background-color: pink;
 }
+
+.aliados li:nth-child(1) a:hover {
+    font-weight: bold;
+    color: orange;
+}
+
+.aliados li:nth-child(2) a:hover {
+    font-weight: bold;
+    color: green;
+}
+
+.aliados li:nth-child(3) a:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.aliados li:nth-child(4) a:hover {
+    font-weight: bold;
+    color: yellow;
+}
+
+.aliados li:nth-child(5) a:hover {
+    font-weight: bold;
+    color: darkgreen;
+}
