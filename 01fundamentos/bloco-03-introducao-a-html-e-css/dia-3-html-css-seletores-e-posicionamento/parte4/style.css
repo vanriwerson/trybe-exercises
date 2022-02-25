@@ -26,3 +26,11 @@ li {
 li em {
     font-weight: bold;
 }
+
+.linguagens li:nth-child(-n+3) {
+    color: blue;
+}
+
+.linguagens li:nth-last-child(-n+2) {
+    background-color: pink;
+}
