@@ -7,22 +7,46 @@ div:hover {
     border: 1px solid black;
 }
 
-div:nth-child(1n) {
+div:nth-of-type(1) {
     background-color: aqua;
 }
 
-div:nth-child(2n) {
+div:nth-of-type(2) {
     background-color: blueviolet;
 }
 
-div:nth-child(3n) {
+div:nth-of-type(3) {
     background-color: chartreuse;
 }
 
-div:nth-child(4n) {
+div:nth-of-type(4) {
     background-color: goldenrod;
 }
 
-div:nth-child(5n) {
+div:nth-of-type(5) {
     background-color: darkblue;
+}
+
+/*Formatando h3*/
+div:nth-of-type(1) h3{
+    color: darkblue;
+}
+
+div:nth-of-type(2) h3{
+    color: white;
+    font-size: large;
+}
+
+div:nth-of-type(3) h3{
+    color: firebrick;
+    font-style: italic;
+}
+
+div:nth-of-type(4) h3{
+    color: darkgreen;
+    font-weight: bold;
+}
+
+div:nth-of-type(5) h3{
+    color: aqua;
 }
