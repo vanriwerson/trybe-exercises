@@ -1,14 +1,7 @@
 body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
-}
-
-.description {
-    width: 90vw;
-    margin: 10px auto;
-}
-
-.description-content p {
-    text-align: justify;
+    background-image: linear-gradient(to bottom, aqua, blue);
 }
 
 .info {
@@ -34,4 +27,19 @@ body {
 
 .info table tbody tr {
     height: 35px;
+}
+
+section {
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+section p {
+    text-align: justify;
+}
+
+.punch {
+    height: fit-content;
+    color: aliceblue;
 }
