@@ -21,7 +21,21 @@ ul {
 
 ul li {
     display: inline;
-    margin: 0 50px;
+    margin: 0 30px;
+}
+
+ul li a {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(10, 0, 95);
+    transition: .5s ease;
+}
+
+ul li a:hover {
+    background-color: rgb(208, 248, 235);
 }
 
 .info {
@@ -99,6 +113,11 @@ section p {
     vertical-align: top;
 }
 
+.references ul li {
+    display: block;
+    margin-bottom: 20px;
+}
+
 footer {
     width: 96%;
     background-color: black;
@@ -106,4 +125,17 @@ footer {
     padding: 1px;
     border-radius: 10px;
     margin: 10px auto;
+}
+
+footer a {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .5s ease;
+}
+
+footer a:hover {
+    background-color: aliceblue;
+    color: rgb(10, 0, 95);
 }
