@@ -98,3 +98,12 @@ section p {
     margin: 10px 20px;
     vertical-align: top;
 }
+
+footer {
+    width: 96%;
+    background-color: black;
+    color: aliceblue;
+    padding: 1px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
