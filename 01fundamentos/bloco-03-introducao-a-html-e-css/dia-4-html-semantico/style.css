@@ -1,0 +1,141 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-image: linear-gradient(to bottom, aqua, blue, rgb(10, 0, 95));
+}
+
+.nav-bar,
+.show,
+.references {
+    width: 96%;
+    height: fit-content;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline;
+    margin: 0 30px;
+}
+
+ul li a {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(10, 0, 95);
+    transition: .5s ease;
+}
+
+ul li a:hover {
+    background-color: rgb(208, 248, 235);
+}
+
+.info {
+    float: right;
+    width: 240px;
+    margin-left: 20px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.info img {
+    width: 150px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.info span {
+    display: block;
+    margin: 10px;
+}
+
+.info table tbody tr {
+    height: 35px;
+}
+
+section {
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+section p {
+    text-align: justify;
+}
+
+.punch {
+    height: fit-content;
+    color: aliceblue;
+}
+
+.vision {
+    color: aliceblue;
+}
+
+.what {
+    position: relative;
+    border-radius: 10px;
+    padding: 20px;
+    color: aliceblue;
+    z-index: 1;
+}
+
+.what-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/OdontodactylusScyllarus2.jpg/1280px-OdontodactylusScyllarus2.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 60%;
+    border-radius: 10px;
+    z-index: -10;
+}
+
+.show,
+.references {
+    width: 240px;
+    height: fit-content;
+    display: inline-block;
+    margin: 10px 20px;
+    vertical-align: top;
+}
+
+.references ul li {
+    display: block;
+    margin-bottom: 20px;
+}
+
+footer {
+    width: 96%;
+    background-color: black;
+    color: aliceblue;
+    padding: 1px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+footer a {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .5s ease;
+}
+
+footer a:hover {
+    background-color: aliceblue;
+    color: rgb(10, 0, 95);
+}
