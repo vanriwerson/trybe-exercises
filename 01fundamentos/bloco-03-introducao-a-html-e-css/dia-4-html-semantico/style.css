@@ -1,6 +1,20 @@
+body {
+    text-align: center;
+}
+
+.description {
+    width: 90vw;
+    margin: 10px auto;
+}
+
+.description-content p {
+    text-align: justify;
+}
+
 .info {
     float: right;
     width: 240px;
+    margin-left: 20px;
     text-align: center;
     border: 1px solid black;
     border-radius: 10px;
