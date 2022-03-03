@@ -1,0 +1,23 @@
+.info {
+    float: right;
+    width: 240px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.info img {
+    width: 150px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.info span {
+    display: block;
+    margin: 10px;
+}
+
+.info table tbody tr {
+    height: 35px;
+}
