@@ -1,5 +1,5 @@
 //6.Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz.
-const peca = "CAVALO";
+const peca = "bispo";
 let analisar = peca.toLowerCase();
 
 switch (analisar) {
