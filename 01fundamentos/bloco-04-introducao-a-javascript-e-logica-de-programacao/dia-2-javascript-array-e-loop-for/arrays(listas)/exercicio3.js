@@ -1,5 +1,5 @@
-//Obtenha o valor "Serviços" do array menu :
+//Adicione o valor "Contato" no final do array menu :
 let menu = ['Home', 'Serviços', 'Portfólio', 'Links'];
-let menuServices = menu[1];
+menu.push('Contato')
 
-console.log(menuServices);
+console.log(menu);
