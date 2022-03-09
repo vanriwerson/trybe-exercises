@@ -1,4 +1,4 @@
-//Desenvolva um algoritmo que é capaz de inverter uma palavra.
+//2.Desenvolva um algoritmo que é capaz de inverter uma palavra.
 let word = 'tryber';
 let reverseWord = "";
 
