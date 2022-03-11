@@ -56,15 +56,19 @@ console.log(findMajorOrMinorNumber([3, 16, 29, 7], '>'));
 console.log(findMajorOrMinorNumber([3, 16, 29, 7], '<'));
 
 //4.Faça um programa que, dado um valor definido numa constante, retorne "positive" se esse valor for positivo, "negative" se for negativo e "zero" caso contrário.
-const numero = 0;
-
-if (numero > 0) {
-  console.log("O número informado é positivo");
-} else if (numero < 0) {
-  console.log("O número informado é negativo");
-} else {
-  console.log("O número informado é zero");
+function returnNumberSign (number) {
+    if (number > 0) {
+         return "O número informado é positivo";
+      } else if (number < 0) {
+        return "O número informado é negativo";
+      } else {
+        return "O número informado é zero";
+      }
 }
+
+console.log(returnNumberSign(7));
+console.log(returnNumberSign(0));
+console.log(returnNumberSign(-3));
 
 //5.Faça um programa que defina três constantes com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false , caso contrário. Se algum ângulo for inválido o programa deve retornar uma mensagem de erro.
 const anguloA = 45;
