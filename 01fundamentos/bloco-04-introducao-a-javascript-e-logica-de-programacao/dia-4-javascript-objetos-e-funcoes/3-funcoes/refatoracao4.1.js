@@ -7,55 +7,53 @@ Após refatorar o seu código , verifique se ele ainda está funcionando conform
 function basicArithmeticOperations(num1, num2, operator) {
   switch (operator) {
     case "+":
-      return num1 + num2;
+      return `O resultado da soma é ${num1 + num2}`;
       break;
     case "-":
-      return num1 - num2;
+      return `O resultado da subtração é ${num1 - num2}`;
       break;
     case "*":
-      return num1 * num2;
+      return `O resultado da multiplicação é ${num1 * num2}`;
       break;
     case "/":
-      return num1 / num2;
+      return `O resultado da divisão é ${num1 / num2}`;
       break;
     case "%":
-      return num1 % num2;
+      return `O resultado do módulo (resto da divisão) é ${num1 % num2}`;
       break;
     default:
       return "Informe um operador válido (+, -, *, / ou %).";
   }
 }
 
+console.log(basicArithmeticOperations(8, 4, "+"));
 console.log(basicArithmeticOperations(8, 4, "-"));
 console.log(basicArithmeticOperations(8, 4, "*"));
 console.log(basicArithmeticOperations(8, 4, "/"));
 console.log(basicArithmeticOperations(8, 4, "%"));
 
 //2.Faça um programa que retorne o maior de dois números. Defina no começo do programa duas constantes com os valores que serão comparados.
-const c = 10;
-const d = 20;
-
-if (c > d) {
-  console.log("O maior número é", c);
-} else {
-  console.log("O maior número é", d);
-}
-
 //3.Faça um programa que retorne o maior de três números. Defina no começo do programa três constantes com os valores que serão comparados.
-const e = 15;
-const f = 30;
-const g = 45;
-let maior;
+function findMajorOrMinorNumber(arrayOfNumbers, operator) {
+    let searchingNumber = arrayOfNumbers[0]
 
-if (e > f && e > g) {
-  maior = e;
-} else if (f > e && f > g) {
-  maior = f;
-} else {
-  maior = g;
+    for (num = 0; num <= arrayOfNumbers.length; num += 1) {
+        if(operator === '>') {
+            if(arrayOfNumbers[num] > searchingNumber) {
+                searchingNumber = arrayOfNumbers[num];
+            }
+        } else {
+            if(arrayOfNumbers[num] < searchingNumber) {
+                searchingNumber = arrayOfNumbers[num];
+            }
+        }
+    }
+
+    return `O número procurado é ${searchingNumber}`;
 }
 
-console.log("O maior número é", maior);
+console.log(findMajorOrMinorNumber([3, 16, 29, 7], '>'));
+console.log(findMajorOrMinorNumber([3, 16, 29, 7], '<'));
 
 //4.Faça um programa que, dado um valor definido numa constante, retorne "positive" se esse valor for positivo, "negative" se for negativo e "zero" caso contrário.
 const numero = 0;
