@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscando Elementos</title>
+  </head>
+  <body>
+    <main id="paiDoPai">
+      <section id="pai">
+        <section id="primeiroFilho"></section>
+        <section id="elementoOndeVoceEsta">
+          <section id="primeiroFilhoDoFilho"></section>
+          <section id="segundoEUltimoFilhoDoFilho"></section>
+        </section>
+        Atenção!
+        <section id="terceiroFilho"></section>
+        <section id="quartoEUltimoFilho"></section>
+      </section>
+    </main>
+    <script>
+      const startPoint = document.getElementById("elementoOndeVoceEsta");
+      //Acesse o elemento elementoOndeVoceEsta .
+      console.log(startPoint);
+      //Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+      startPoint.parentElement.style.backgroundColor = "red";
+      //Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso?
+      startPoint.firstElementChild.innerText =
+        "Este é o primeiro filho do meu ponto de partida";
+      //Acesse o primeiroFilho a partir de pai .
+      console.log(document.getElementById("pai").firstElementChild);
+      //Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta .
+      console.log(startPoint.firstElementChild);
+      //Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta .
+      console.log(startPoint.nextSibling);
+      //Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta .
+      console.log(startPoint.nextElementSibling);
+      //Agora acesse o terceiroFilho a partir de pai .
+      console.log(document.getElementById("pai").children[2]);
+    </script>
+  </body>
+</html>
