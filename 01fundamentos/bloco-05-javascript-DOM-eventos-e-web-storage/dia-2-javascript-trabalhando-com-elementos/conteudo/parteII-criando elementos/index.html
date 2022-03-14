@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscando Elementos</title>
+  </head>
+  <body>
+    <main id="paiDoPai">
+      <section id="pai">
+        <section id="primeiroFilho"></section>
+        <section id="elementoOndeVoceEsta">
+          <section id="primeiroFilhoDoFilho"></section>
+          <section id="segundoEUltimoFilhoDoFilho"></section>
+        </section>
+        Atenção!
+        <section id="terceiroFilho"></section>
+        <section id="quartoEUltimoFilho"></section>
+      </section>
+    </main>
+    <script>
+      const startPoint = document.getElementById("elementoOndeVoceEsta");
+      const father = document.getElementById("pai");
+      //Crie um irmão para elementoOndeVoceEsta .
+      let irmao = document.createElement('section');
+      irmao.setAttribute('id', 'irmao');
+      father.appendChild(irmao);
+      //Crie um filho para elementoOndeVoceEsta .
+      let maisUmFilho = document.createElement('section');
+      maisUmFilho.setAttribute('id', 'mais-um-filho');
+      startPoint.appendChild(maisUmFilho);
+      //Crie um filho para primeiroFilhoDoFilho .
+      let primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho');
+      let filhoDoPrimeiroFilhoDoFilho = document.createElement('section');
+      filhoDoPrimeiroFilhoDoFilho.setAttribute('id', 'filho-do-primeiro-filho-do-filho');
+      primeiroFilhoDoFilho.appendChild(filhoDoPrimeiroFilhoDoFilho);
+      //A partir desse filho criado, acesse terceiroFilho .
+      let outroStartPoint = document.getElementById('filho-do-primeiro-filho-do-filho');
+      console.log(outroStartPoint.parentNode.parentNode.parentNode.children[2]);
+    </script>
+  </body>
+</html>
