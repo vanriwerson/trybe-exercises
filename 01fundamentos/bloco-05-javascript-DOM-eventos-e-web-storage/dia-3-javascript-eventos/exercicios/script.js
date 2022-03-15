@@ -55,17 +55,17 @@ function createDaysOfTheMonth() {
 createDaysOfTheMonth();
 
 //EXERCÍCIO 02.
-function createButton(label) {
+function createButton(label, id) {
   const buttonsContainer = document.querySelector(".buttons-container");
   let newButton = document.createElement("button");
 
-  newButton.setAttribute("id", "btn-holiday");
+  newButton.setAttribute("id", id);
   newButton.innerHTML = label;
 
   buttonsContainer.appendChild(newButton);
 }
 
-createButton("Feriados");
+createButton("Feriados", "btn-holiday");
 
 //EXERCÍCIO 03.
 let holidayEmphasis = false;
@@ -93,4 +93,6 @@ function changeHollidaysBG(){
 
 const holidayBtn = document.getElementById('btn-holiday');
 holidayBtn.addEventListener('click', changeHollidaysBG);
-//background-color: '#036b52';
+
+//EXERCÍCIO 04.
+createButton("Sexta-feira", "btn-friday");
