@@ -69,30 +69,34 @@ createButton("Feriados", "btn-holiday");
 
 //EXERCÍCIO 03.
 let holidayEmphasis = false;
-function changeHollidaysBG(){
-    let daysList = document.querySelectorAll(".day")
-    
-    for (i = 0; i < daysList.length; i += 1) {
-        if (daysList[i].classList.contains('holiday')) {
-            if (holidayEmphasis === false) {
-                daysList[i].style.backgroundColor = 'green';
-                daysList[i].style.color = '#eee';
-            } else {
-                daysList[i].style.backgroundColor = '#eee';
-                daysList[i].style.color = '#777';
-            }
-        }
-    }
+let fridayEmphasis = false;
 
-    if (holidayEmphasis === false) {
-        holidayEmphasis = true;
-    } else {
-        holidayEmphasis = false;
-    }
+function toggleTextEmphasis() {
+  if (holidayEmphasis === false) {
+    changeHollidaysBG("green", "#eee");
+    holidayEmphasis = true;
+  } else {
+    changeHollidaysBG("#eee", "#777");
+    holidayEmphasis = false;
+  }
 }
 
-const holidayBtn = document.getElementById('btn-holiday');
-holidayBtn.addEventListener('click', changeHollidaysBG);
+//Function otimizada para reutilização
+function changeHollidaysBG(BGColor, textColor) {
+  let daysList = document.querySelectorAll(".day");
+
+  for (i = 0; i < daysList.length; i += 1) {
+    if (daysList[i].classList.contains("holiday")) {
+      daysList[i].style.backgroundColor = BGColor;
+      daysList[i].style.color = textColor;
+    }
+  }
+}
+
+const holidayBtn = document.getElementById("btn-holiday");
+holidayBtn.addEventListener("click", toggleTextEmphasis);
 
 //EXERCÍCIO 04.
 createButton("Sexta-feira", "btn-friday");
+
+//EXERCÍCIO 05.
