@@ -1,58 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buscando Elementos</title>
-  </head>
-  <body>
-    <main id="paiDoPai">
-      <section id="pai">
-        <!-- Não apagar -->
-        <section id="primeiroFilho"></section>
-        <section id="elementoOndeVoceEsta">
-          <!-- Não apagar -->
-          <section id="primeiroFilhoDoFilho"></section>
-          <!-- Não apagar -->
-          <section id="segundoEUltimoFilhoDoFilho"></section>
-        </section>
-        Atenção!
-        <section id="terceiroFilho"></section>
-        <section id="quartoEUltimoFilho"></section>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscando Elementos</title>
+</head>
+
+<body>
+  <main id="paiDoPai">
+    <section id="pai"><!-- Não apagar -->
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta"><!-- Não apagar -->
+        <section id="primeiroFilhoDoFilho"></section><!-- Não apagar -->
+        <section id="segundoEUltimoFilhoDoFilho"></section>
       </section>
-    </main>
-    <script>
-      const startPoint = document.getElementById("elementoOndeVoceEsta");
-      const father = document.getElementById("pai");
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    //Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .    
+    const father = document.getElementById("pai");
+    const startPoint = document.getElementById("elementoOndeVoceEsta");
 
-      let irmao = document.createElement("section");
-      irmao.setAttribute("id", "irmao");
-      father.appendChild(irmao);
+    console.log(father.children[0]);
+    father.removeChild(father.children[0]);
+    
+    console.log(startPoint.children[1]);
+    startPoint.removeChild(startPoint.children[1]);
+        
+    console.log(startPoint.nextSibling);
+    father.removeChild(startPoint.nextSibling);
+    
+    console.log(startPoint.nextElementSibling);
+    father.removeChild(startPoint.nextElementSibling);
+    
+    console.log(father.children[1]);
+    father.removeChild(father.children[1]);
+  </script>
+</body>
 
-      let maisUmFilho = document.createElement("section");
-      maisUmFilho.setAttribute("id", "mais-um-filho");
-      startPoint.appendChild(maisUmFilho);
-
-      let primeiroFilhoDoFilho = document.getElementById(
-        "primeiroFilhoDoFilho"
-      );
-      let filhoDoPrimeiroFilhoDoFilho = document.createElement("section");
-      filhoDoPrimeiroFilhoDoFilho.setAttribute(
-        "id",
-        "filho-do-primeiro-filho-do-filho"
-      );
-      primeiroFilhoDoFilho.appendChild(filhoDoPrimeiroFilhoDoFilho);
-
-      let outroStartPoint = document.getElementById(
-        "filho-do-primeiro-filho-do-filho"
-      );
-      console.log(outroStartPoint.parentNode.parentNode.parentNode.children[2]);
-
-      //Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
-      let paiDoPai = document.getElementById("paiDoPai");
-
-      console.log(paiDoPai.children[0].children[1]);
-    </script>
-  </body>
 </html>
