@@ -9,9 +9,12 @@
   <body>
     <main id="paiDoPai">
       <section id="pai">
+        <!-- Não apagar -->
         <section id="primeiroFilho"></section>
         <section id="elementoOndeVoceEsta">
+          <!-- Não apagar -->
           <section id="primeiroFilhoDoFilho"></section>
+          <!-- Não apagar -->
           <section id="segundoEUltimoFilhoDoFilho"></section>
         </section>
         Atenção!
@@ -22,25 +25,34 @@
     <script>
       const startPoint = document.getElementById("elementoOndeVoceEsta");
       const father = document.getElementById("pai");
-      
-      let irmao = document.createElement('section');
-      irmao.setAttribute('id', 'irmao');
+
+      let irmao = document.createElement("section");
+      irmao.setAttribute("id", "irmao");
       father.appendChild(irmao);
-      
-      let maisUmFilho = document.createElement('section');
-      maisUmFilho.setAttribute('id', 'mais-um-filho');
+
+      let maisUmFilho = document.createElement("section");
+      maisUmFilho.setAttribute("id", "mais-um-filho");
       startPoint.appendChild(maisUmFilho);
-      
-      let primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho');
-      let filhoDoPrimeiroFilhoDoFilho = document.createElement('section');
-      filhoDoPrimeiroFilhoDoFilho.setAttribute('id', 'filho-do-primeiro-filho-do-filho');
+
+      let primeiroFilhoDoFilho = document.getElementById(
+        "primeiroFilhoDoFilho"
+      );
+      let filhoDoPrimeiroFilhoDoFilho = document.createElement("section");
+      filhoDoPrimeiroFilhoDoFilho.setAttribute(
+        "id",
+        "filho-do-primeiro-filho-do-filho"
+      );
       primeiroFilhoDoFilho.appendChild(filhoDoPrimeiroFilhoDoFilho);
-      
-      let outroStartPoint = document.getElementById('filho-do-primeiro-filho-do-filho');
+
+      let outroStartPoint = document.getElementById(
+        "filho-do-primeiro-filho-do-filho"
+      );
       console.log(outroStartPoint.parentNode.parentNode.parentNode.children[2]);
 
       //Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+      let paiDoPai = document.getElementById("paiDoPai");
 
+      console.log(paiDoPai.children[0].children[1]);
     </script>
   </body>
 </html>
