@@ -6,7 +6,7 @@ function createDaysOfTheWeek() {
     "Quarta",
     "Quinta",
     "Sexta",
-    "Sábado"
+    "Sábado",
   ];
   const weekDaysList = document.querySelector(".week-days");
 
@@ -25,7 +25,7 @@ createDaysOfTheWeek();
 function createDaysOfTheMonth() {
   const dezDaysList = [
     29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-    20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+    20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
   ];
   const holidaysList = [24, 25, 31];
   const fridayDaysList = [4, 11, 18, 25];
@@ -69,24 +69,23 @@ createButton("Feriados", "btn-holiday");
 
 //EXERCÍCIO 03.
 let holidayEmphasis = false;
-let fridayEmphasis = false;
 
-function toggleTextEmphasis() {
+function toggleHolidaysEmphasis() {
   if (holidayEmphasis === false) {
-    changeHollidaysBG("green", "#eee");
+    changeTextEmphasis("green", "#eee", "holiday");
     holidayEmphasis = true;
   } else {
-    changeHollidaysBG("#eee", "#777");
+    changeTextEmphasis("#eee", "#777", "holiday");
     holidayEmphasis = false;
   }
 }
 
 //Function otimizada para reutilização
-function changeHollidaysBG(BGColor, textColor) {
+function changeTextEmphasis(BGColor, textColor, targetClass) {
   let daysList = document.querySelectorAll(".day");
 
   for (i = 0; i < daysList.length; i += 1) {
-    if (daysList[i].classList.contains("holiday")) {
+    if (daysList[i].classList.contains(targetClass)) {
       daysList[i].style.backgroundColor = BGColor;
       daysList[i].style.color = textColor;
     }
@@ -94,9 +93,23 @@ function changeHollidaysBG(BGColor, textColor) {
 }
 
 const holidayBtn = document.getElementById("btn-holiday");
-holidayBtn.addEventListener("click", toggleTextEmphasis);
+holidayBtn.addEventListener("click", toggleHolidaysEmphasis);
 
 //EXERCÍCIO 04.
 createButton("Sexta-feira", "btn-friday");
 
 //EXERCÍCIO 05.
+let fridayEmphasis = false;
+
+function toggleFridaysEmphasis() {
+  if (fridayEmphasis === false) {
+    changeTextEmphasis("green", "#eee", "friday");
+    fridayEmphasis = true;
+  } else {
+    changeTextEmphasis("#eee", "#777", "friday");
+    fridayEmphasis = false;
+  }
+}
+
+const fridayBtn = document.getElementById("btn-friday");
+fridayBtn.addEventListener("click", toggleFridaysEmphasis);
