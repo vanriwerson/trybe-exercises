@@ -153,7 +153,7 @@ function addNewTaskSubtitle (color) {
   tasksContainer.appendChild(newTaskSubitle);
 }
 
-addNewTaskSubtitle('yellow')
+addNewTaskSubtitle('blue')
 
 //EXERCÍCIO 09.
 function toggleSelectedClass(event) {
@@ -172,10 +172,10 @@ function pinTaskOnCalendar(event) {
   let tasksList = document.querySelectorAll('.task');
   for (let i = 0; i <tasksList.length; i += 1) {
     if (tasksList[i].classList.contains('selected')) {
-      let newBG = tasksList[i].getAttribute('style');
-      event.target.setAttribute('style', newBG)
+      let newColor = tasksList[i].style.backgroundColor;
+      event.target.style.color = newColor;
     } else {
-      event.target.style.backgroundColor = '#eee'
+      event.target.style.color = 'rgb(119,119,119)'
     }
   }
 }
