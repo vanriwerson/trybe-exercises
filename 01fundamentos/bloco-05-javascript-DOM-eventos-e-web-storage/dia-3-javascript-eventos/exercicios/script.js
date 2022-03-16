@@ -72,20 +72,19 @@ let holidayEmphasis = false;
 
 function toggleHolidaysEmphasis() {
   if (holidayEmphasis === false) {
-    changeTextEmphasis("green", "#eee", "holiday");
+    changeHolidayEmphasis("green", "#eee");
     holidayEmphasis = true;
   } else {
-    changeTextEmphasis("#eee", "#777", "holiday");
+    changeHolidayEmphasis("#eee", "#777");
     holidayEmphasis = false;
   }
 }
 
-//Function otimizada para reutilização
-function changeTextEmphasis(BGColor, textColor, targetClass) {
+function changeHolidayEmphasis(BGColor, textColor) {
   let daysList = document.querySelectorAll(".day");
 
   for (i = 0; i < daysList.length; i += 1) {
-    if (daysList[i].classList.contains(targetClass)) {
+    if (daysList[i].classList.contains("holiday")) {
       daysList[i].style.backgroundColor = BGColor;
       daysList[i].style.color = textColor;
     }
@@ -102,11 +101,20 @@ createButton("Sexta-feira", "btn-friday");
 let fridayEmphasis = false;
 
 function toggleFridaysEmphasis() {
+  let daysList = document.querySelectorAll(".day");
+
+  for (i = 0; i < daysList.length; i += 1) {
+    if (daysList[i].classList.contains("friday")) {
+      if(fridayEmphasis === false) {
+        daysList[i].innerText = "SEXTOU!";
+      } else {
+        daysList[i].innerText = Number(daysList[i].nextElementSibling.innerHTML) -1;
+      }
+    }
+  }
   if (fridayEmphasis === false) {
-    changeTextEmphasis("#777", "#eee", "friday");
     fridayEmphasis = true;
   } else {
-    changeTextEmphasis("#eee", "#777", "friday");
     fridayEmphasis = false;
   }
 }
