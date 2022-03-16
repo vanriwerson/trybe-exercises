@@ -132,3 +132,16 @@ for (i = 0; i < daysList.length; i += 1) {
   daysList[i].addEventListener('mouseleave', zoomOut);
 }
 
+//EXERCÍCIO 07.
+const tasksContainer = document.querySelector('.my-tasks');
+
+function addNewTask (taskTitle) {
+  let newTaskTitle = document.createElement('span');
+  newTaskTitle.innerText = taskTitle;
+  
+  tasksContainer.appendChild(newTaskTitle);
+}
+
+addNewTask('Estudar');
+addNewTask('Cozinhar');
+addNewTask('Tomar banho');
