@@ -103,7 +103,7 @@ let fridayEmphasis = false;
 
 function toggleFridaysEmphasis() {
   if (fridayEmphasis === false) {
-    changeTextEmphasis("green", "#eee", "friday");
+    changeTextEmphasis("#777", "#eee", "friday");
     fridayEmphasis = true;
   } else {
     changeTextEmphasis("#eee", "#777", "friday");
@@ -113,3 +113,22 @@ function toggleFridaysEmphasis() {
 
 const fridayBtn = document.getElementById("btn-friday");
 fridayBtn.addEventListener("click", toggleFridaysEmphasis);
+
+//EXERCÍCIO 06.
+function zoomIn (event) {
+  event.target.style.fontSize = '30px';
+  event.target.style.cursor = 'pointer';
+}
+
+function zoomOut (event) {
+  event.target.style.fontSize = '20px';
+  event.target.style.cursor = 'arrow';
+}
+
+let daysList = document.querySelectorAll(".day");
+
+for (i = 0; i < daysList.length; i += 1) {
+  daysList[i].addEventListener('mouseover', zoomIn);
+  daysList[i].addEventListener('mouseleave', zoomOut);
+}
+
