@@ -135,13 +135,32 @@ for (i = 0; i < daysList.length; i += 1) {
 //EXERCÍCIO 07.
 const tasksContainer = document.querySelector('.my-tasks');
 
-function addNewTask (taskTitle) {
+function addNewTaskTitle (taskTitle) {
   let newTaskTitle = document.createElement('span');
   newTaskTitle.innerText = taskTitle;
   
   tasksContainer.appendChild(newTaskTitle);
 }
 
-addNewTask('Estudar');
-addNewTask('Cozinhar');
-addNewTask('Tomar banho');
+addNewTaskTitle('Estudar');
+
+//EXERCÍCIO 08.
+function addNewTaskSubtitle (color) {
+  let newTaskSubitle = document.createElement('div');
+  newTaskSubitle.setAttribute('class', 'task')
+  newTaskSubitle.style.backgroundColor = color;
+  
+  tasksContainer.appendChild(newTaskSubitle);
+}
+
+addNewTaskSubtitle('yellow')
+
+//EXERCÍCIO 09.
+function toggleSelectedClass(event) {
+  event.target.classList.toggle('selected');
+}
+
+let tasksList = document.querySelectorAll('.task');
+for (let i = 0; i < tasksList.length; i += 1) {
+  tasksList[i].addEventListener("click", toggleSelectedClass);
+}
