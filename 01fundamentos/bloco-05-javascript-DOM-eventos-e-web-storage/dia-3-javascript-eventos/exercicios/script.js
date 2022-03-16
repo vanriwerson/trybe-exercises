@@ -164,3 +164,24 @@ let tasksList = document.querySelectorAll('.task');
 for (let i = 0; i < tasksList.length; i += 1) {
   tasksList[i].addEventListener("click", toggleSelectedClass);
 }
+
+//EXERCÍCIO 10.
+function pinTaskOnCalendar(event) {
+  console.log(event.target.getAttribute('style'));
+
+  let tasksList = document.querySelectorAll('.task');
+  for (let i = 0; i <tasksList.length; i += 1) {
+    if (tasksList[i].classList.contains('selected')) {
+      let newBG = tasksList[i].getAttribute('style');
+      event.target.setAttribute('style', newBG)
+    } else {
+      event.target.style.backgroundColor = '#eee'
+    }
+  }
+}
+
+for (let i = 0; i < daysList.length; i += 1) {
+  daysList[i].addEventListener("click", pinTaskOnCalendar);
+}
+
+
