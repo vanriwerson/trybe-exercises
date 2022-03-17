@@ -84,6 +84,16 @@ main {
     margin: 0.5rem 0;
 }
 
+.controls span {
+    background-color: rgb(29, 22, 100);
+    color: rgb(250, 250, 250);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+}
+
 button {
     background-image: linear-gradient(rgb(165, 157, 236), rgb(29, 22, 100));
     color: rgb(250, 250, 250);
