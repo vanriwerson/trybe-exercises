@@ -54,6 +54,7 @@ main {
 
 .text-content p {
     margin-bottom: 1rem;
+    font-size: 16px;
 }
 
 .controls-container {

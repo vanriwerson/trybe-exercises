@@ -21,6 +21,7 @@ const pageBackgroundColor = document.body;
 const pageText = document.querySelectorAll(".text-content p");
 
 //Controles:
+//const BGColorButtons = document.querySelectorAll(".bg-color-controls button");
 const lightBtn = document.getElementById("bg-color1-btn");
 const mediumBtn = document.getElementById("bg-color2-btn");
 const darkBtn = document.getElementById("bg-color3-btn");
@@ -29,14 +30,20 @@ const textSize = document.getElementById("font-size");
 const textSizeLabel = document.getElementById("font-size-label");
 const lineSize = document.getElementById("line-size");
 const lineSizeLabel = document.getElementById("line-size-label");
-const fontFamilyButtons = document.querySelectorAll(
-  ".font-family-controls button"
-);
+const fontFamilyButtons = document.querySelectorAll(".font-family-controls button");
+
+let preferences = {
+    BGColor: "rgb(250, 250, 250)",
+    fontColor: "rgb(0, 0, 0)",
+    fontSize: "16px",
+    lineHeight: "24px",
+    fontFamily: "Arial"
+}
 
 function changeBackGroundColor(event) { //antes recebia a cor como parâmetro
   pageBackgroundColor.style.backgroundColor = event.target.value;
 
-  localStorage.setItem('BGColor', event.target.value);
+  localStorage.setItem("BGColor", event.target.value);
 }
 
 //let colorOptions = ['rgb(250, 250, 250)', 'rgb(125, 125, 125)', 'rgb(39, 39, 39)']
@@ -45,15 +52,15 @@ mediumBtn.addEventListener("click", changeBackGroundColor);
 darkBtn.addEventListener("click", changeBackGroundColor);
 
 /*
-const BGColorButtons = document.querySelectorAll(".bg-color-controls button");
 BGColorButtons.forEach((btn, key) => {
     btn.addEventListener('click', changeBackGroundColor(colorOptions[key]));
 })
 */
 
-
-function loadUserPreferences() {
-    pageBackgroundColor.style.backgroundColor = localStorage.getItem('BGColor');
+window.onload = function () {
+  if (localStorage.length > 0) {
+    pageBackgroundColor.style.backgroundColor = localStorage.getItem("BGColor");
+  }
 }
 
 loadUserPreferences();
