@@ -61,7 +61,6 @@ main {
     justify-content: space-between;
     background-color: rgb(145, 145, 167);
     padding: 1rem;
-    margin-top: 3rem;
     border-radius: 6px;
     transform: translateX(150%);
     transition: transform 0.5s ease-in;
