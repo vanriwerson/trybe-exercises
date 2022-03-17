@@ -10,10 +10,12 @@
 
 body {
     background-color: rgb(250, 250, 250);
+    overflow-x: hidden;
+    height: 100vh;
 }
 
 header {
-    background-image: linear-gradient(rgb(165, 157, 236), rgb(29, 22, 100));
+    background-image: linear-gradient(to bottom right,rgb(165, 157, 236), rgb(29, 22, 100));
     color: rgb(250, 250, 250);
     height: fit-content;
     width: 100vw;
@@ -25,7 +27,7 @@ header h1 {
     margin-bottom: 1rem;
 }
 
-header a {
+a {
     text-decoration: none;
     color: rgb(250, 250, 250);
 }
@@ -107,3 +109,12 @@ button:active {
     right: 2rem;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    background-image: linear-gradient(to bottom right,rgb(165, 157, 236), rgb(29, 22, 100));
+    color: rgb(250, 250, 250);
+    height: fit-content;
+    width: 100vw;
+    padding: 1rem;
+}
