@@ -42,6 +42,7 @@ main {
 .text-content {
     width: 99%;
     margin: 0 2rem;
+    margin-bottom: 2rem;
     margin-left: 0;
     padding: 2rem;
     border: solid 1px black;
@@ -49,6 +50,11 @@ main {
     line-height: 24px;
     text-align: justify;
     box-shadow: 3px 3px 5px rgba(29, 22, 100, 0.5);
+}
+
+.text-content p {
+    margin-bottom: 1rem;
+    font-size: 16px;
 }
 
 .controls-container {
@@ -84,6 +90,16 @@ main {
     margin: 0.5rem 0;
 }
 
+.controls span {
+    background-color: rgb(29, 22, 100);
+    color: rgb(250, 250, 250);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+}
+
 button {
     background-image: linear-gradient(rgb(165, 157, 236), rgb(29, 22, 100));
     color: rgb(250, 250, 250);
@@ -110,7 +126,7 @@ button:active {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background-image: linear-gradient(to bottom right,rgb(165, 157, 236), rgb(29, 22, 100));
     color: rgb(250, 250, 250);
