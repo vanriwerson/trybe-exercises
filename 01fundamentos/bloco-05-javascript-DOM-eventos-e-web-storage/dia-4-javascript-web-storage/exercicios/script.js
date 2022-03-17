@@ -33,8 +33,10 @@ const fontFamilyButtons = document.querySelectorAll(
   ".font-family-controls button"
 );
 
-function changeBackGroundColor(event) {
+function changeBackGroundColor(event) { //antes recebia a cor como parâmetro
   pageBackgroundColor.style.backgroundColor = event.target.value;
+
+  localStorage.setItem('BGColor', event.target.value);
 }
 
 //let colorOptions = ['rgb(250, 250, 250)', 'rgb(125, 125, 125)', 'rgb(39, 39, 39)']
@@ -48,3 +50,10 @@ BGColorButtons.forEach((btn, key) => {
     btn.addEventListener('click', changeBackGroundColor(colorOptions[key]));
 })
 */
+
+
+function loadUserPreferences() {
+    pageBackgroundColor.style.backgroundColor = localStorage.getItem('BGColor');
+}
+
+loadUserPreferences();
