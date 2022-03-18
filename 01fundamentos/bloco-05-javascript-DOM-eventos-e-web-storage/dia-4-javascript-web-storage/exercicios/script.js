@@ -27,40 +27,131 @@ const mediumBtn = document.getElementById("bg-color2-btn");
 const darkBtn = document.getElementById("bg-color3-btn");
 const textColor = document.getElementById("text-color");
 const textSize = document.getElementById("font-size");
-const textSizeLabel = document.getElementById("font-size-label");
 const lineSize = document.getElementById("line-size");
-const lineSizeLabel = document.getElementById("line-size-label");
-const fontFamilyButtons = document.querySelectorAll(".font-family-controls button");
+//const fontFamilyButtons = document.querySelectorAll(".font-family-controls button");
+const family1Btn = document.getElementById('family1-btn');
+const family2Btn = document.getElementById('family2-btn');
+const family3Btn = document.getElementById('family3-btn');
 
-let preferences = {
-    BGColor: "rgb(250, 250, 250)",
-    fontColor: "rgb(0, 0, 0)",
-    fontSize: "16px",
-    lineHeight: "24px",
-    fontFamily: "Arial"
+let userConfig = {
+  BGColor: "",
+  fontColor: "",
+  fontSize: "",
+  lineHeight: "",
+  fontFamily: "",
+};
+
+//Local storage functions:
+function saveUserConfig() {
+  let storageConfig = JSON.stringify(userConfig)
+  localStorage.setItem('preferences', storageConfig);
 }
 
-function changeBackGroundColor(event) { //antes recebia a cor como parâmetro
-  pageBackgroundColor.style.backgroundColor = event.target.value;
-
-  localStorage.setItem("BGColor", event.target.value);
+function loadUserPreferences() {
+  let configs = JSON.parse(localStorage.getItem('preferences'));
+  pageBackgroundColor.style.backgroundColor = configs.BGColor;
+  
+  pageText.forEach(paragraph => {
+    paragraph.style.color = configs.fontColor;
+    paragraph.style.fontSize = configs.fontSize;
+    paragraph.style.lineHeight = configs.lineHeight;
+    paragraph.style.fontFamily = configs.fontFamily;
+  })
 }
 
-//let colorOptions = ['rgb(250, 250, 250)', 'rgb(125, 125, 125)', 'rgb(39, 39, 39)']
+//Change preference functions:
+function changeBackGroundColor(event) {
+  let colorOptions = ['rgb(250, 250, 250)', 'rgb(125, 125, 125)', 'rgb(39, 39, 39)']
+  let selectedBGColor = colorOptions[event.target.value]
+  pageBackgroundColor.style.backgroundColor = selectedBGColor;
+
+  userConfig.BGColor = selectedBGColor;
+  saveUserConfig();
+}
+
+
 lightBtn.addEventListener("click", changeBackGroundColor);
 mediumBtn.addEventListener("click", changeBackGroundColor);
 darkBtn.addEventListener("click", changeBackGroundColor);
 
-/*
-BGColorButtons.forEach((btn, key) => {
-    btn.addEventListener('click', changeBackGroundColor(colorOptions[key]));
-})
-*/
-
-window.onload = function () {
-  if (localStorage.length > 0) {
-    pageBackgroundColor.style.backgroundColor = localStorage.getItem("BGColor");
-  }
+function selectTextColor() {
+  let selectedColor = textColor.value;
+  changePageTextFontColor(selectedColor);
 }
 
-loadUserPreferences();
+function changePageTextFontColor(color) {
+  pageText.forEach(paragraph => {
+    paragraph.style.color = color;
+  })
+
+  userConfig.fontColor = color;
+  saveUserConfig();
+}
+
+textColor.addEventListener('change', selectTextColor)
+
+function selectPageTextSize() {
+  const textSizeLabel = document.getElementById("font-size-label");
+  textSizeLabel.innerText = textSize.value;
+
+  let textSizeSelected = `${16 + Number(textSize.value)}px`;
+  changePageTextSize(textSizeSelected);
+}
+
+function changePageTextSize(size) {
+  pageText.forEach(paragraph => {
+    paragraph.style.fontSize = size;
+  })
+
+  userConfig.fontSize = size;
+  saveUserConfig();
+}
+
+textSize.addEventListener('change', selectPageTextSize);
+
+function selectPageLineSize () {
+  const lineSizeLabel = document.getElementById("line-size-label");
+  lineSizeLabel.innerText = lineSize.value;
+
+  let lineSizeSelected = `${24 + Number(lineSize.value)}px`;
+  changePageLineSize(lineSizeSelected);
+}
+
+function changePageLineSize(size) {
+  pageText.forEach(paragraph => {
+    paragraph.style.lineHeight = size;
+  })
+
+  userConfig.lineHeight = size;
+  saveUserConfig();
+}
+
+lineSize.addEventListener('change', selectPageLineSize);
+
+
+function selectPageTextFontFamily(event) {
+  let fontOptions = ['Roboto', 'Times New Roman', 'Comic Neue'];
+  let selectedFont = fontOptions[event.target.value];
+  
+  changePageTextFontFamily(selectedFont);
+}
+
+function changePageTextFontFamily(family) {
+  pageText.forEach(paragraph => {
+    paragraph.style.fontFamily = family;
+  })
+
+  userConfig.fontFamily = family;
+  saveUserConfig();
+}
+
+family1Btn.addEventListener('click', selectPageTextFontFamily)
+family2Btn.addEventListener('click', selectPageTextFontFamily)
+family3Btn.addEventListener('click', selectPageTextFontFamily)
+
+//Carrega as preferências salvas no Local Storage:
+window.onload = function () {
+  if(localStorage.length > 0) {
+    loadUserPreferences();
+  }
+}

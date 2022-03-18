@@ -32,6 +32,17 @@ a {
     color: rgb(250, 250, 250);
 }
 
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header nav button {
+    margin-right: 2rem;
+}
+
 main {
     display: flex;
     align-items: flex-start;
@@ -74,6 +85,7 @@ main {
     transition: transform 0.5s ease-in;
 }
 .controls.visible {
+    
     transform: translateX(-100%);
     transition: transform 0.8s ease-out;
 }
@@ -119,10 +131,16 @@ button:active {
     transform: scale(0.9);
 }
 
-#toggle-controls-btn {
-    position: absolute;
-    top: 3.6rem;
-    right: 2rem;
+#family1-btn {
+    font-family: 'Roboto' !important;
+}
+
+#family2-btn {
+    font-family: 'Times New Roman' !important;
+}
+
+#family3-btn {
+    font-family: 'Comic Neue' !important;
 }
 
 footer {
