@@ -102,13 +102,13 @@ let fridayEmphasis = false;
 
 function toggleFridaysEmphasis() {
   let daysList = document.querySelectorAll(".day");
-
+  
   for (i = 0; i < daysList.length; i += 1) {
     if (daysList[i].classList.contains("friday")) {
       if(fridayEmphasis === false) {
         daysList[i].innerText = "SEXTOU!";
       } else {
-        daysList[i].innerText = Number(daysList[i].nextElementSibling.innerHTML) -1;
+        daysList[i].innerText = Number(daysList[i].previousElementSibling.innerHTML) +1;
       }
     }
   }
@@ -192,4 +192,30 @@ for (let i = 0; i < daysList.length; i += 1) {
   daysList[i].addEventListener("click", pinTaskOnCalendar);
 }
 
+//BÔNUS.
+const compromiseList = document.querySelector('.task-list');
+const compromiseInput = document.getElementById('task-input');
+const addCompromiseBtn = document.getElementById('btn-add');
 
+function getCompromise() {
+  if(compromiseInput.value == '' || compromiseInput.value == null || compromiseInput.value == undefined) {
+    window.alert('Insira seu compromisso no campo indicado.')
+  } else {
+    let compromise = compromiseInput.value;
+    addCompromise(compromise);
+  }
+}
+
+function addCompromise(compromise) {
+  let newCompromise = document.createElement('li');
+  newCompromise.innerText = compromise;
+
+  compromiseList.appendChild(newCompromise);
+}
+
+compromiseInput.addEventListener('keypress', (e) => {
+  if(e.key == 'Enter') {
+    getCompromise();
+  }
+});
+addCompromiseBtn.addEventListener('click', getCompromise);
