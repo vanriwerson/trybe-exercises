@@ -27,7 +27,6 @@ const mediumBtn = document.getElementById("bg-color2-btn");
 const darkBtn = document.getElementById("bg-color3-btn");
 const textColor = document.getElementById("text-color");
 const textSize = document.getElementById("font-size");
-const textSizeLabel = document.getElementById("font-size-label");
 const lineSize = document.getElementById("line-size");
 const lineSizeLabel = document.getElementById("line-size-label");
 const fontFamilyButtons = document.querySelectorAll(".font-family-controls button");
@@ -40,6 +39,25 @@ let userConfig = {
   fontFamily: "Arial",
 };
 
+//Local storage functions:
+function saveUserConfig() {
+  let storageConfig = JSON.stringify(userConfig)
+  localStorage.setItem('preferences', storageConfig);
+}
+
+function loadUserPreferences() {
+  let configs = JSON.parse(localStorage.getItem('preferences'));
+  pageBackgroundColor.style.backgroundColor = configs.BGColor;
+  
+  pageText.forEach(paragraph => {
+    paragraph.style.color = configs.fontColor;
+    paragraph.style.fontSize = configs.fontSize;
+    paragraph.style.lineHeight = configs.lineHeight;
+    paragraph.style.fontFamily = configs.fontFamily;
+  })
+}
+
+//Change preference functions:
 function changeBackGroundColor(event) {
   //antes recebia a cor como parâmetro
   pageBackgroundColor.style.backgroundColor = event.target.value;
@@ -58,22 +76,44 @@ BGColorButtons.forEach((btn, key) => {
     btn.addEventListener('click', changeBackGroundColor(colorOptions[key]));
 })
 */
-
-function saveUserConfig() {
-  let storageConfig = JSON.stringify(userConfig)
-  localStorage.setItem('preferences', storageConfig);
+function selectTextColor() {
+  let selectedColor = textColor.value;
+  changePageTextFontColor(selectedColor);
 }
 
-function loadUserPreferences() {
-  let configs = JSON.parse(localStorage.getItem('preferences'));
-  pageBackgroundColor.style.backgroundColor = configs.BGColor;
-  
+function changePageTextFontColor(color) {
   pageText.forEach(paragraph => {
-    paragraph.style.color = configs.fontColor;
-    paragraph.style.fontSize = configs.fontSize;
-    paragraph.style.lineHeight = configs.lineHeight;
-    paragraph.style.fontFamily = configs.fontFamily;
+    paragraph.style.color = color;
   })
+
+  userConfig.fontColor = color;
+  saveUserConfig();
+}
+
+textColor.addEventListener('change', selectTextColor)
+
+function selectPageTextSize() {
+  const textSizeLabel = document.getElementById("font-size-label");
+  textSizeLabel.innerText = textSize.value;
+
+  let textSizeSelected = `${16 + Number(textSize.value)}px`;
+  console.log(textSizeSelected);
+  changePageTextSize(textSizeSelected);
+}
+
+function changePageTextSize(size) {
+  pageText.forEach(paragraph => {
+    paragraph.style.fontSize = size;
+  })
+
+  userConfig.fontSize = size;
+  saveUserConfig();
+}
+
+textSize.addEventListener('change', selectPageTextSize);
+
+function selectPageLineSize () {
+
 }
 
 window.onload = function () {

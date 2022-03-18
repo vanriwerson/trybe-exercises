@@ -34,6 +34,7 @@ a {
 
 header nav {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
 }
@@ -80,6 +81,7 @@ main {
     transition: transform 0.5s ease-in;
 }
 .controls.visible {
+    
     transform: translateX(-100%);
     transition: transform 0.8s ease-out;
 }
