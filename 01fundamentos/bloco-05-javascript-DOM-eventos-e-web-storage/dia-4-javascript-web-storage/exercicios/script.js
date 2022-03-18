@@ -28,7 +28,10 @@ const darkBtn = document.getElementById("bg-color3-btn");
 const textColor = document.getElementById("text-color");
 const textSize = document.getElementById("font-size");
 const lineSize = document.getElementById("line-size");
-const fontFamilyButtons = document.querySelectorAll(".font-family-controls button");
+//const fontFamilyButtons = document.querySelectorAll(".font-family-controls button");
+const family1Btn = document.getElementById('family1-btn');
+const family2Btn = document.getElementById('family2-btn');
+const family3Btn = document.getElementById('family3-btn');
 
 let userConfig = {
   BGColor: "",
@@ -58,23 +61,19 @@ function loadUserPreferences() {
 
 //Change preference functions:
 function changeBackGroundColor(event) {
-  //antes recebia a cor como parâmetro
-  pageBackgroundColor.style.backgroundColor = event.target.value;
+  let colorOptions = ['rgb(250, 250, 250)', 'rgb(125, 125, 125)', 'rgb(39, 39, 39)']
+  let selectedBGColor = colorOptions[event.target.value]
+  pageBackgroundColor.style.backgroundColor = selectedBGColor;
 
-  userConfig.BGColor = event.target.value;
+  userConfig.BGColor = selectedBGColor;
   saveUserConfig();
 }
 
-//let colorOptions = ['rgb(250, 250, 250)', 'rgb(125, 125, 125)', 'rgb(39, 39, 39)']
+
 lightBtn.addEventListener("click", changeBackGroundColor);
 mediumBtn.addEventListener("click", changeBackGroundColor);
 darkBtn.addEventListener("click", changeBackGroundColor);
 
-/*
-BGColorButtons.forEach((btn, key) => {
-    btn.addEventListener('click', changeBackGroundColor(colorOptions[key]));
-})
-*/
 function selectTextColor() {
   let selectedColor = textColor.value;
   changePageTextFontColor(selectedColor);
@@ -129,6 +128,28 @@ function changePageLineSize(size) {
 
 lineSize.addEventListener('change', selectPageLineSize);
 
+
+function selectPageTextFontFamily(event) {
+  let fontOptions = ['Roboto', 'Times New Roman', 'Comic Neue'];
+  let selectedFont = fontOptions[event.target.value];
+  
+  changePageTextFontFamily(selectedFont);
+}
+
+function changePageTextFontFamily(family) {
+  pageText.forEach(paragraph => {
+    paragraph.style.fontFamily = family;
+  })
+
+  userConfig.fontFamily = family;
+  saveUserConfig();
+}
+
+family1Btn.addEventListener('click', selectPageTextFontFamily)
+family2Btn.addEventListener('click', selectPageTextFontFamily)
+family3Btn.addEventListener('click', selectPageTextFontFamily)
+
+//Carrega as preferências salvas no Local Storage:
 window.onload = function () {
   if(localStorage.length > 0) {
     loadUserPreferences();

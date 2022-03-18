@@ -39,6 +39,10 @@ header nav {
     width: 100%;
 }
 
+header nav button {
+    margin-right: 2rem;
+}
+
 main {
     display: flex;
     align-items: flex-start;
@@ -125,6 +129,18 @@ button:hover {
 
 button:active {
     transform: scale(0.9);
+}
+
+#family1-btn {
+    font-family: 'Roboto' !important;
+}
+
+#family2-btn {
+    font-family: 'Times New Roman' !important;
+}
+
+#family3-btn {
+    font-family: 'Comic Neue' !important;
 }
 
 footer {
