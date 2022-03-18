@@ -32,6 +32,12 @@ a {
     color: rgb(250, 250, 250);
 }
 
+header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 main {
     display: flex;
     align-items: flex-start;
@@ -117,12 +123,6 @@ button:hover {
 
 button:active {
     transform: scale(0.9);
-}
-
-#toggle-controls-btn {
-    position: absolute;
-    top: 3.6rem;
-    right: 2rem;
 }
 
 footer {

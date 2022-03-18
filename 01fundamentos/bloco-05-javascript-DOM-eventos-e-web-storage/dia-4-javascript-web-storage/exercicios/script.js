@@ -32,18 +32,20 @@ const lineSize = document.getElementById("line-size");
 const lineSizeLabel = document.getElementById("line-size-label");
 const fontFamilyButtons = document.querySelectorAll(".font-family-controls button");
 
-let preferences = {
-    BGColor: "rgb(250, 250, 250)",
-    fontColor: "rgb(0, 0, 0)",
-    fontSize: "16px",
-    lineHeight: "24px",
-    fontFamily: "Arial"
-}
+let userConfig = {
+  BGColor: "rgb(250, 250, 250)",
+  fontColor: "rgb(0, 0, 0)",
+  fontSize: "16px",
+  lineHeight: "24px",
+  fontFamily: "Arial",
+};
 
-function changeBackGroundColor(event) { //antes recebia a cor como parâmetro
+function changeBackGroundColor(event) {
+  //antes recebia a cor como parâmetro
   pageBackgroundColor.style.backgroundColor = event.target.value;
 
-  localStorage.setItem("BGColor", event.target.value);
+  userConfig.BGColor = event.target.value;
+  saveUserConfig();
 }
 
 //let colorOptions = ['rgb(250, 250, 250)', 'rgb(125, 125, 125)', 'rgb(39, 39, 39)']
@@ -57,10 +59,25 @@ BGColorButtons.forEach((btn, key) => {
 })
 */
 
-window.onload = function () {
-  if (localStorage.length > 0) {
-    pageBackgroundColor.style.backgroundColor = localStorage.getItem("BGColor");
-  }
+function saveUserConfig() {
+  let storageConfig = JSON.stringify(userConfig)
+  localStorage.setItem('preferences', storageConfig);
 }
 
-loadUserPreferences();
+function loadUserPreferences() {
+  let configs = JSON.parse(localStorage.getItem('preferences'));
+  pageBackgroundColor.style.backgroundColor = configs.BGColor;
+  
+  pageText.forEach(paragraph => {
+    paragraph.style.color = configs.fontColor;
+    paragraph.style.fontSize = configs.fontSize;
+    paragraph.style.lineHeight = configs.lineHeight;
+    paragraph.style.fontFamily = configs.fontFamily;
+  })
+}
+
+window.onload = function () {
+  if(localStorage.length > 0) {
+    loadUserPreferences();
+  }
+}
