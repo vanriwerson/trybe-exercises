@@ -28,15 +28,14 @@ const darkBtn = document.getElementById("bg-color3-btn");
 const textColor = document.getElementById("text-color");
 const textSize = document.getElementById("font-size");
 const lineSize = document.getElementById("line-size");
-const lineSizeLabel = document.getElementById("line-size-label");
 const fontFamilyButtons = document.querySelectorAll(".font-family-controls button");
 
 let userConfig = {
-  BGColor: "rgb(250, 250, 250)",
-  fontColor: "rgb(0, 0, 0)",
-  fontSize: "16px",
-  lineHeight: "24px",
-  fontFamily: "Arial",
+  BGColor: "",
+  fontColor: "",
+  fontSize: "",
+  lineHeight: "",
+  fontFamily: "",
 };
 
 //Local storage functions:
@@ -97,7 +96,6 @@ function selectPageTextSize() {
   textSizeLabel.innerText = textSize.value;
 
   let textSizeSelected = `${16 + Number(textSize.value)}px`;
-  console.log(textSizeSelected);
   changePageTextSize(textSizeSelected);
 }
 
@@ -113,8 +111,23 @@ function changePageTextSize(size) {
 textSize.addEventListener('change', selectPageTextSize);
 
 function selectPageLineSize () {
+  const lineSizeLabel = document.getElementById("line-size-label");
+  lineSizeLabel.innerText = lineSize.value;
 
+  let lineSizeSelected = `${24 + Number(lineSize.value)}px`;
+  changePageLineSize(lineSizeSelected);
 }
+
+function changePageLineSize(size) {
+  pageText.forEach(paragraph => {
+    paragraph.style.lineHeight = size;
+  })
+
+  userConfig.lineHeight = size;
+  saveUserConfig();
+}
+
+lineSize.addEventListener('change', selectPageLineSize);
 
 window.onload = function () {
   if(localStorage.length > 0) {
