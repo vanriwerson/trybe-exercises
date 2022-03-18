@@ -203,12 +203,18 @@ function getCompromise() {
   } else {
     let compromise = compromiseInput.value;
     addCompromise(compromise);
+    compromiseInput.value = '';
   }
+}
+
+function removeCompromise(event) {
+  event.target.remove();
 }
 
 function addCompromise(compromise) {
   let newCompromise = document.createElement('li');
   newCompromise.innerText = compromise;
+  newCompromise.addEventListener('dblclick', removeCompromise);
 
   compromiseList.appendChild(newCompromise);
 }
