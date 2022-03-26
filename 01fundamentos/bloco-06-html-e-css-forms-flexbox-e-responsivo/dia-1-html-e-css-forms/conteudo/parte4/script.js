@@ -8,6 +8,7 @@ function preventDefaultAction(e) {
 }
 
 HREF_LINK.addEventListener("click", preventDefaultAction);
+
 INPUT_CHECKBOX.addEventListener("click", preventDefaultAction);
 
 INPUT_TEXT.addEventListener("keypress", (e) => {

@@ -3,4 +3,4 @@ const clearFormBtn = document.getElementById('clear-form');
 
 sendFormBtn.addEventListener('click', (e) => e.preventDefault());
 
-clearFormBtn.addEventListener('click', () => {location.reload()});
+// clearFormBtn.addEventListener('click', () => {location.reload()}); => Atualizado para buuton type reset no html
