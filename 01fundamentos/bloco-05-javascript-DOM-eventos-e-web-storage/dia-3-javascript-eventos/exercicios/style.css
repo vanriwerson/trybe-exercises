@@ -136,6 +136,15 @@
     letter-spacing: 2px;
     vertical-align: middle;
   }
+
+  .task-list-container ul li {
+    margin-bottom: 10px;
+  }
+
+  .task-list-container ul li:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
   
   .week-days-container {
     margin-left: 35px;
