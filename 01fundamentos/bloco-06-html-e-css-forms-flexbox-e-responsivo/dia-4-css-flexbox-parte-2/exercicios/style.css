@@ -53,6 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-basis: 700px;
+  flex: 10;
 }
 
 .movie-container h2 {
@@ -71,7 +72,7 @@ body {
   background-color: #5C687C;
   border: black solid 1px;
   display: flex;
-  flex-basis: 16%;
+  flex: 1 16%;
   height: 150px;
   justify-content: center;
   margin: 10px;
