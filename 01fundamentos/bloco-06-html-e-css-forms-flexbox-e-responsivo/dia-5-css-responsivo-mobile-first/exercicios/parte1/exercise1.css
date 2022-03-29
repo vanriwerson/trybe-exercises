@@ -1,0 +1,59 @@
+/*
+ * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * apply a natural box layout model to all elements, but allowing components to change
+ */
+ html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  /* 1-Faça o tamanho da fonte ser maior */
+  font-size: 1.4em;
+  /* 4-Adicione um pouco de margin na página */
+  margin: 0.7em;
+}
+
+article {
+
+}
+
+h1 {
+/* 2-Faça o tamanho da fonte dos elementos h1 ser menor */
+  font-size: 1.6em;
+}
+
+h2 {
+
+}
+
+img {
+  /* 3-Aumente o espaçamento entre as figuras */
+  max-width: 100%;
+  margin: 1em 0;
+}
+
+main {
+
+}
+
+section {
+
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+  font-size: .8em;
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    background-color: rgb(240, 240, 240);
+  }
+}
