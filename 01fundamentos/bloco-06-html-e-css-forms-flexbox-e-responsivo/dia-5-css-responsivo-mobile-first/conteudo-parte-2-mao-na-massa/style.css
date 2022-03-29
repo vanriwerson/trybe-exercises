@@ -83,3 +83,9 @@ p strong {
     display: block;
   }
 }
+
+@media  screen and (max-width: 500px) {
+  p.trick {
+    color: #525252;
+  }
+}
