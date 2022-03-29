@@ -71,3 +71,9 @@ p strong {
     display: block;
   }
 }
+
+@media  screen and (max-width: 1000px) and (min-width: 600px) {
+  .card:nth-of-type(2) {
+    display: block;
+  }
+}
