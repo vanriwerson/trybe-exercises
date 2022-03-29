@@ -9,6 +9,7 @@ body {
   background-color: rgb(247, 247, 247);
 }
 
+/* EXERCÍCIOS PARTE 1 */
 .header-container {
   background-color: #5C687C;
   display: flex;
@@ -42,6 +43,7 @@ body {
   margin-right: 10px;
 }
 
+/* EXERCÍCIOS PARTE 2 */
 .main-container {
   display: flex;
   flex-wrap: wrap;
@@ -77,6 +79,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 20px;
+  flex-basis: 350px;
 }
 
 .aside-container h3, h4 {
