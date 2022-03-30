@@ -90,3 +90,39 @@ body {
     display: none;
   }
 }
+
+@media screen and (max-width: 360px) {
+  body {
+    padding: 0;
+  }
+
+  #container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #header {
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  #navigation {
+    margin-top: 83px;
+  }
+
+  #navigation ul {
+    flex-direction: column;
+  }
+
+  #navigation li a {
+    border: none;
+  }
+
+  img {
+    width: 100vw;
+  }
+  #aside {
+    display: none;
+  }
+}
