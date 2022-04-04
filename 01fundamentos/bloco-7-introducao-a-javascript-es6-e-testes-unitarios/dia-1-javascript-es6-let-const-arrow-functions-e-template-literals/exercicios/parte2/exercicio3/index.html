@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
   <title>Contador de clicks</title>
 </head>
 <body>
+    <button id="addClick">Clique aqui</button>
+    <p>Você clicou <span id="counter">0</span> vezes.</p>
   <script src="script.js"></script>
 </body>
 </html>
