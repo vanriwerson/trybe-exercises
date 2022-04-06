@@ -51,12 +51,11 @@ function sumStudents(obj) {
   sum = 0;
   const objectKeys = Object.keys(obj);
   for (let i = 0; i < objectKeys.length; i += 1) {
-    sum += obj[objectKeys[i]].numeroEstudantes;
+    sum += obj[objectKeys[i]][1];
   }
-
-  return sum; // Expected 50;
+  return sum;
 }
-console.log(sumStudents(allLessons));
+console.log(sumStudents(allLessons)); // Expected 50;
 
 // 7.Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto.
 const getValueByIndex = (obj, index) => {
@@ -71,7 +70,7 @@ console.log(getValueByIndex(lesson1, 0));
 const verifyEntries = (obj, key, value) => {
   let matches = false;
   const entries = Object.entries(obj);
-  for (i in entries) {
+  for (let i in entries) {
     if(entries[i][0] === key && entries[i][1] === value) {
       matches = true;
     }
