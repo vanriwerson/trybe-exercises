@@ -1,6 +1,6 @@
 const sum = require('./sum');
 
-describe('1 -Verificar se a função sum(a, b) retorna a soma do parâmetro a com o b', () => {
+describe('Verificar se a função sum(a, b) retorna a soma do parâmetro a com o b', () => {
   it('Verificar se o retorno de sum(4, 5) é 9', () => {
     expect(sum(4, 5)).toBe(9);
   });
