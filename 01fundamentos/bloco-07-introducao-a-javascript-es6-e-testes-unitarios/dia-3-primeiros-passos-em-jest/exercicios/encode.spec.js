@@ -24,5 +24,12 @@ describe('Verificar se na função decode os números 1, 2, 3, 4 e 5 são conver
   it('Verificar se o número 5 é convertido na vogal "u"', () => {expect(decode('5')).toBe('u')});
 });
 
-// Teste se as demais letras/números não são convertidos para cada caso;
-// Teste se a string que é retornada pelas funções têm o mesmo número de caracteres que a string passada como parâmetro.
+describe('Verificar se as demais letras e números não são convertidos em "encode" e "decode"', () => {
+  it('Verificar se a string "bcd678" não é alterada por encode', () => {expect(encode('bcd678')).toBe('bcd678')});
+  it('Verificar se a string "bcd678" não é alterada por decode', () => {expect(decode('bcd678')).toBe('bcd678')});
+});
+
+describe('Verificar se a string que é retornada pelas funções têm o mesmo número de caracteres que a string passada como parâmetro', () => {
+  it('Verificar se encode("Bruno") retorna o length 5', () => {expect(encode('Bruno').length).toBe(5)});
+  it('Verificar se decode("Bruno") retorna o length 5', () => {expect(decode('Bruno').length).toBe(5)});
+});
