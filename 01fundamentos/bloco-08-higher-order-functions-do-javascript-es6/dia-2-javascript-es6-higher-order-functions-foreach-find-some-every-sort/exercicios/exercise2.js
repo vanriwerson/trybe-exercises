@@ -4,8 +4,15 @@ const books = require('./template');
 // Dica: use a função forEach .
 function smallerName() {
   let nameBook;
-  // escreva aqui o seu código
+  let data = [];
+  
+  books.forEach((book) => {
+    data.push({ bookName: book.name, nameLength: book.name.length});
+  });
+  data.sort((a, b) => a.nameLength - b.nameLength);
+  nameBook = data[0].bookName;
 
-  // Variável nameBook que receberá o valor do menor nome;
   return nameBook;
 }
+
+console.log(smallerName()); // Retorna 'Duna'
