@@ -62,7 +62,6 @@ const books = [
 ];
 
 // 2 - Crie uma string com os nomes de todas as pessoas autoras.
-// Copiar
 // const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 function reduceNames() {
   return books.reduce((acc, curr) => books.indexOf(curr) === books.length -1 ? acc + `${curr.author.name}.` : acc + `${curr.author.name}, `, '')
@@ -70,7 +69,6 @@ function reduceNames() {
 console.log(reduceNames());
 
 // 3 - Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
-// Copiar
 // const expectedResult = 43;
 function averageAge() {
   return books.reduce((acc, curr) => acc + (curr.releaseYear - curr.author.birthYear), 0) / books.length;
@@ -78,7 +76,6 @@ function averageAge() {
 console.log(averageAge());
 
 // 4 - Encontre o livro com o maior nome.
-// Copiar
 // const expectedResult = {
 //   id: 1,
 //   name: 'As Crônicas de Gelo e Fogo',
