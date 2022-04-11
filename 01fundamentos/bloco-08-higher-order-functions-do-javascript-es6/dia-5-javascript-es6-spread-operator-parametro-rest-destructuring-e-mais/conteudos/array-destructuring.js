@@ -29,4 +29,5 @@ let numerosPares = [1, 3, 5, 6, 8, 10, 12];
 console.log(numerosPares); // [6, 8, 10, 12]
 
 [odd1, odd2, odd3, even1, even2, even3, even4] = numerosPares;
+// [,,, ...numerosPares] = numerosPares;
 console.log([even1, even2, even3, even4]);
