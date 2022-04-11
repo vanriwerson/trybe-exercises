@@ -73,8 +73,9 @@ console.log(reduceNames());
 // Copiar
 // const expectedResult = 43;
 function averageAge() {
-  
+  return books.reduce((acc, curr) => acc + (curr.releaseYear - curr.author.birthYear), 0) / books.length;
 }
+console.log(averageAge());
 
 // 4 - Encontre o livro com o maior nome.
 // Copiar
