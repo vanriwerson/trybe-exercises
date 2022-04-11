@@ -65,7 +65,7 @@ const books = [
 // Copiar
 // const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 function reduceNames() {
-  return books.reduce((acc, curr) => books.indexOf(curr) === books.length -1 ? acc += `${curr.author.name}.` : acc += `${curr.author.name}, `, '')
+  return books.reduce((acc, curr) => books.indexOf(curr) === books.length -1 ? acc + `${curr.author.name}.` : acc + `${curr.author.name}, `, '')
 }
 console.log(reduceNames());
 
@@ -90,5 +90,6 @@ console.log(averageAge());
 //   releaseYear: 1991,
 // };
 function longestNamedBook() {
-  
+  return books.reduce((acc, curr) => acc.name.length > curr.name.length ? acc : curr);
 }
+console.log(longestNamedBook());
