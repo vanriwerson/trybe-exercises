@@ -7,7 +7,7 @@ const toBRL = async ({ symbol } = coin) => {
   try {
     const response = await fetch(BASE_URL);
     const data = await response.json();
-    const BRL = await data[lowerSymbol];
+    const BRL = data[lowerSymbol];
     return BRL;
   } catch (error) {
     console.log(`Algo deu errado :( \n${error}`);
