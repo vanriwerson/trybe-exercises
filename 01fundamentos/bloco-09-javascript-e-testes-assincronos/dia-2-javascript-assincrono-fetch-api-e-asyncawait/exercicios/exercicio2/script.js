@@ -1,14 +1,16 @@
 const cryptoDisplay = document.querySelector('.cryto-container');
 
 const appendLi = (coinsList) => {
-  for (let i = 0; i < 10; i += 1) {
-    const { name, symbol, priceUsd } = coinsList[i];
-    
+  const topTen = coinsList.filter((coin) => coin.rank <= 10);
+  
+  topTen.forEach((coin) => {
+    const { name, symbol, priceUsd } = coin;
+
     const newCrypto = document.createElement('li');
     newCrypto.innerText = `${name}(${symbol}): ${Number(priceUsd).toFixed(2)};`;
     
-    cryptoDisplay.appendChild(newCrypto); 
-  }
+    cryptoDisplay.appendChild(newCrypto);
+  });
 };
 
 const fetchCrypto = async () => {
