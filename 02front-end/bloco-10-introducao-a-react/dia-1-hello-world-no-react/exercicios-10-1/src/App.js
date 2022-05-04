@@ -1,3 +1,5 @@
+import Header from "./Header";
+
 const Task = (value) => {
   return (
     <li>{value}</li>
@@ -7,7 +9,12 @@ const Task = (value) => {
 const compromises = ['Estudar React', 'Colaborar com a turma', 'Reestruturar meu portfólio com React', 'Preparar-me para as provas da faculdade', 'Fazer o almoço/jantar das crianças'];
 
 function App() {
-  return compromises.map((task) => Task(task));
+  return (
+    <>
+      <Header />
+      {compromises.map((task) => Task(task))}
+    </>
+  );
 }
 
 export default App;
