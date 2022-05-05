@@ -1,0 +1,27 @@
+.title {
+  color: rgb(2, 29, 2);
+  width: 100vw;
+  text-align: center;
+}
+
+.card {
+  background-color: rgb(186, 190, 190);
+  width: 280px;
+  padding: 10px 30px;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(2, 29, 2);
+  color: rgb(255, 255, 255);
+  width: 100vw;
+  height: 50px;
+  padding: 3px;
+  position: absolute;
+  bottom: 0;
+}
