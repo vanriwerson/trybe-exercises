@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const conteudos = [
   {
     conteudo: 'High Order Functions',
