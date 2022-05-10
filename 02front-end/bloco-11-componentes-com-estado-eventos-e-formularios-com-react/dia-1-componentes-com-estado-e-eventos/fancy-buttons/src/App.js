@@ -16,33 +16,49 @@ class App extends React.Component {
     this.goodbye = this.goodbye.bind(this)
   }
   
-  hello = () => {
-    console.log('Hello!');
+  hello() {
     this.setState((previousState, _props) => ({
       helloClicks: previousState.helloClicks + 1
-    }));
+    }), () => {
+      console.log(this.setButtonColor(this.state.helloClicks));
+    });
   }
 
   conversation() {
-    console.log("How're doing?");
     this.setState((previousState, _props) => ({
       conversationClicks: previousState.conversationClicks + 1
-    }));
+    }), () => {
+      console.log(this.setButtonColor(this.state.conversationClicks));
+    });
   }
 
   goodbye() {
-    console.log('Goodbye!');
     this.setState((previousState, _props) => ({
       goodbyeClicks: previousState.goodbyeClicks + 1
-    }));
+    }), () => {
+      console.log(this.setButtonColor(this.state.goodbyeClicks));
+    });
+  }
+
+  setButtonColor(number) {
+    return number % 2 === 0 ? 'green' : 'blue';
   }
 
   render() {
     return (
       <div className="App">
-        <button onClick={this.hello}>{this.state.helloClicks}</button>
-        <button onClick={this.conversation}>{this.state.conversationClicks}</button>
-        <button onClick={this.goodbye}>{this.state.goodbyeClicks}</button>
+        <button
+          onClick={this.hello}
+          style={{ backgroundColor: this.setButtonColor(this.state.helloClicks) }}
+        >{this.state.helloClicks}</button>
+        <button
+          onClick={this.conversation}
+          style={{ backgroundColor: this.setButtonColor(this.state.conversationClicks) }}
+        >{this.state.conversationClicks}</button>
+        <button
+          onClick={this.goodbye}
+          style={{ backgroundColor: this.setButtonColor(this.state.goodbyeClicks) }}
+        >{this.state.goodbyeClicks}</button>
       </div>
     );
   }
