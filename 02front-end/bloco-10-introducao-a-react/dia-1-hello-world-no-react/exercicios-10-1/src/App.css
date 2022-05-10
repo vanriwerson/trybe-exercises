@@ -22,6 +22,6 @@
   width: 100vw;
   height: 50px;
   padding: 3px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
