@@ -3,21 +3,27 @@ import './App.css'
 
 class App extends Component{
   state = {
-    cor: 'Vermelho',
+    modo: 'React',
     entendeu: false,
     nota: 10,
     observacoes: '',
   }
   
+  handleChange = ({ target: { name, value } }) => {
+    this.setState({
+      name: value,
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Componentes com Estado, Eventos e Formulários com React</h1>
         <form>
-          <select>
-            <option>Amarelo</option>
-            <option>Azul</option>
-            <option selected>Vermelho</option>
+          <select name="modo" onChange={(e) => this.handleChange(e)}>
+            <option>Aos poucos</option>
+            <option>aprendo</option>
+            <option>React</option>
           </select>
   
           <label>
