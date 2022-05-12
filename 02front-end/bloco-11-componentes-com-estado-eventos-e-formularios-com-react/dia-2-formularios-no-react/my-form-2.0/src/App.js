@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component{
+  state = {
+    estado:'SP'
+  }
+  
+  handleChange = ({ target }) => {
+    const { value } = target;
+    this.setState({ estado: value })
+  }
   render() {
     return(
       <form className="form">
@@ -30,7 +38,13 @@ class App extends Component{
           {/* select com os estados brasileiros: https://gist.github.com/quagliato/9282728 */}
           <label htmlFor="estado">
             Estado:
-            <select id="estado" name="estado">
+            <select
+              id="estado"
+              name="estado"
+              onChange={this.handleChange}
+              value={this.state.estado}
+              required={true}
+            >
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
               <option value="AP">Amapá</option>
