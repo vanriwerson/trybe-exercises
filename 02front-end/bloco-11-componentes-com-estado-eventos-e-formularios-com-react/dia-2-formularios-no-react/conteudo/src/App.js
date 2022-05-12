@@ -5,30 +5,47 @@ import Select from './components/Select';
 
 class App extends Component{
   state = {
-    modo: 'Aos poucos',
+    modo: '',
     entendeu: false,
-    nota: 10,
+    nota: '',
     observacoes: '',
+    formularioComErros: true,
   }
   
   handleChange = ({ target }) => {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({ [name]: value });
+    
+    this.handleError();
+  }
+
+  handleError = () => {
+    const { modo, entendeu, nota } = this.state;
+    
+    const errorCases = [
+      !modo,
+      !entendeu,
+      !nota,
+    ];
+
+    const fulfilledForm = errorCases.every((error) => error !== true);
+
+    this.setState({ formularioComErros: !fulfilledForm });
   }
 
   render() {
-    console.log(this.state);
+    const { modo, entendeu, nota, observacoes, formularioComErros } = this.state;
     return (
       <div className="App">
         <h1>Componentes com Estado, Eventos e Formulários com React</h1>
         <form>
           <Select
-            value={this.state.modo}
+            value={modo}
             change={(e) => this.handleChange(e)}
           />
           <Checkbox
-            value={this.state.entendeu}
+            value={entendeu}
             change={(e) => this.handleChange(e)}
           />
   
@@ -37,7 +54,7 @@ class App extends Component{
             <input
               name="nota"
               type="number"
-              value={this.state.nota}
+              value={nota}
               onChange={(e) => this.handleChange(e)}
             ></input>
           </label>
@@ -46,7 +63,7 @@ class App extends Component{
             Justifique sua nota:
             <textarea
               name="observacoes"
-              value={this.state.observacoes}
+              value={observacoes}
               onChange={(e) => this.handleChange(e)}
             />
           </label>
@@ -56,6 +73,9 @@ class App extends Component{
             <input type="file"></input> 
           </p>
         </form>
+        { formularioComErros
+            ? <span style={ { color: 'red' } }>Preencha todos os campos</span>
+            : <span style={ { color: 'green' } }>Todos campos foram preenchidos</span> }
       </div>
     );
   }
