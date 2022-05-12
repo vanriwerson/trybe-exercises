@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import RequiredTextarea from './components/RequiredTextarea';
 import RequiredTextInput from './components/RequiredTextInput';
 import SelectState from './components/SelectState';
 
@@ -11,8 +12,10 @@ class App extends Component{
     endereco: '',
     cidade: '',
     estado:'',
+    tipo: '',
+    curriculo: '',
   }
-  
+
   handleChange = ({ target }) => {
     const { name, value, checked } = target;
     const valueType = target.type === 'checkbox' ? checked : value;
@@ -21,7 +24,7 @@ class App extends Component{
   }
 
   render() {
-    const { nome, email, cpf, endereco, cidade, estado } = this.state;
+    const { nome, email, cpf, endereco, cidade, estado, curriculo } = this.state;
 
     return(
       <form className="form">
@@ -71,10 +74,32 @@ class App extends Component{
             onChange={(e) => this.handleChange(e)}
             value={estado}
           />
+
+          <label>
+            Tipo:
+            <input
+              type="radio"
+              name="tipo"
+              value="Casa"
+              onChange={(e) => this.handleChange(e)}
+            />Casa
+            <input
+              type="radio"
+              name="tipo"
+              value="Apartamento"
+              onChange={(e) => this.handleChange(e)}
+            />Apartamento
+          </label>
         </fieldset>
         <fieldset>
           <legend>Último Emprego</legend>
-          
+          <RequiredTextarea
+            labelText="Resumo do currículo"
+            name="curriculo"
+            maxLength={40}
+            onChange={(e) => this.handleChange(e)}
+            value={curriculo}
+          />
         </fieldset>
       </form>
     );
