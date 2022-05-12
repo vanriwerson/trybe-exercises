@@ -1,50 +1,81 @@
 import React, { Component } from 'react';
 import './App.css';
+import RequiredTextInput from './components/RequiredTextInput';
 
 class App extends Component{
   state = {
-    estado:'SP'
+    nome:'',
+    email: '',
+    cpf: '',
+    endereco: '',
+    cidade: '',
+    estado:'',
   }
   
   handleChange = ({ target }) => {
-    const { value } = target;
-    this.setState({ estado: value })
+    const { name, value, checked } = target;
+    const valueType = target.type === 'checkbox' ? checked : value;
+    const setValue = () => (name === 'nome' ? valueType.toUpperCase() : valueType);
+    this.setState({ [name]: setValue() })
   }
+
   render() {
+    const { nome, email, cpf, endereco, cidade, estado } = this.state;
+
     return(
       <form className="form">
         <fieldset>
           <legend>Dados Pessoais</legend>
-          <label htmlFor="nome">
-            Nome: <input type="text" name="nome" maxLength={40} required={true} ></input>
-          </label>
+          <RequiredTextInput
+            labelText="Nome"
+            name="nome"
+            maxLength={40}
+            onChange={(e) => this.handleChange(e)}
+            value={nome}
+          />
 
-          <label htmlFor="email">
-            E-mail: <input type="text" name="email" maxLength={50} required={true} ></input>
-          </label>
+          <RequiredTextInput
+            labelText="E-mail"
+            name="email"
+            maxLength={50}
+            onChange={(e) => this.handleChange(e)}
+            value={email}
+          />
           
-          <label htmlFor="cpf">
-            CPF: <input type="text" name="cpf" maxLength={11} required={true} ></input>
-          </label>
+          <RequiredTextInput
+            labelText="CPF"
+            name="cpf"
+            maxLength={11}
+            onChange={(e) => this.handleChange(e)}
+            value={cpf}
+          />
 
-          <label htmlFor="endereco">
-            Endereço: <input type="text" name="endereco" maxLength={200} required={true} ></input>
-          </label>
+          <RequiredTextInput
+            labelText="Endereço"
+            name="endereco"
+            maxLength={200}
+            onChange={(e) => this.handleChange(e)}
+            value={endereco}
+          />
 
-          <label htmlFor="cidade">
-            Cidade: <input type="text" name="cidade" maxLength={28} required={true} ></input>
-          </label>
+          <RequiredTextInput
+            labelText="Cidade"
+            name="cidade"
+            maxLength={28}
+            onChange={(e) => this.handleChange(e)}
+            value={cidade}
+          />
 
           {/* select com os estados brasileiros: https://gist.github.com/quagliato/9282728 */}
           <label htmlFor="estado">
             Estado:
             <select
-              id="estado"
               name="estado"
-              onChange={this.handleChange}
+              onChange={(e) => this.handleChange(e)}
               value={this.state.estado}
               required={true}
             >
+              <option value="">Selecione</option>
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
               <option value="AP">Amapá</option>
