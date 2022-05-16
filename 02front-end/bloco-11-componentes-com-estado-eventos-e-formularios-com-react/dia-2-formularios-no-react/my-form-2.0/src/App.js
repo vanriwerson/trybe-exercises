@@ -14,6 +14,8 @@ class App extends Component{
     estado:'',
     tipo: '',
     curriculo: '',
+    cargo: '',
+    descricao: '',
   }
 
   handleChange = ({ target }) => {
@@ -23,8 +25,13 @@ class App extends Component{
     this.setState({ [name]: setValue() })
   }
 
+  handleError = () => {
+    const currentState = Object.values(this.state);
+    return currentState.every((value) => value !== '');
+  }
+
   render() {
-    const { nome, email, cpf, endereco, cidade, estado, curriculo } = this.state;
+    const { nome, email, cpf, endereco, cidade, estado, curriculo, cargo, descricao } = this.state;
 
     return(
       <form className="form">
@@ -96,9 +103,25 @@ class App extends Component{
           <RequiredTextarea
             labelText="Resumo do currículo"
             name="curriculo"
-            maxLength={40}
+            maxLength={1000}
             onChange={(e) => this.handleChange(e)}
             value={curriculo}
+          />
+
+          <RequiredTextarea
+            labelText="Cargo"
+            name="cargo"
+            maxLength={40}
+            onChange={(e) => this.handleChange(e)}
+            value={cargo}
+          />
+
+          <RequiredTextInput
+            labelText="Descrição do cargo"
+            name="descricao"
+            maxLength={500}
+            onChange={(e) => this.handleChange(e)}
+            value={descricao}
           />
         </fieldset>
       </form>

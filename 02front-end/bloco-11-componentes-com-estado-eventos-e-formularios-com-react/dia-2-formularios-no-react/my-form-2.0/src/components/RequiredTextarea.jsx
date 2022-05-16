@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
 class RequiredTextarea extends Component{
+  state = {
+    showAlert: true,
+  }
+
+  handleMouseEnter = () => {
+    const { name } = this.props;
+    const show = this.state.showAlert;
+    if (show === true && name === 'cargo') {
+      this.setState({ showAlert: false });
+      alert('Preencha com cuidado esta informação.');
+    }
+  }
+
   render() {
     const { labelText, name, maxLength, onChange, value } = this.props;
     
@@ -12,6 +25,7 @@ class RequiredTextarea extends Component{
           name={ name }
           maxLength={ maxLength }
           onChange={ onChange }
+          onMouseEnter={this.handleMouseEnter}
           value={ value }
           required
         />
