@@ -1,0 +1,16 @@
+.App {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.App form {
+  border: 1px solid;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+  padding: 20px;
+}
