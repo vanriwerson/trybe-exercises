@@ -1,0 +1,32 @@
+.user-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-card {
+  border: 1px solid;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  padding: 24px;
+  width: 360px;
+}
+
+.user-image {
+  border-radius: 12px;
+}
+
+.command-button {
+  border-radius: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 20px;
+  padding: 16px 28px;
+  text-transform: uppercase;
+}
+
+.command-button:active {
+  transform: scale(0.9);
+}

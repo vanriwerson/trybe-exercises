@@ -37,8 +37,7 @@ class DadJoke extends React.Component {
   }
 
   renderJokeElement() {
-    const { jokeObj } = this.state;
-    const { joke } = jokeObj;
+    const { jokeObj: { joke } } = this.state;
     return (
       <div>
         <p>{ joke }</p>
