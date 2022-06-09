@@ -35,7 +35,7 @@ describe('teste da aplicação toda', () => {
     history.push('/pagina/que-nao-existe/');
 
     const notFoundTitle = await screen.findByRole('heading',
-      { name: 'Página não encontrada' });
+      { name: /^Página não encontrada$/g, level: 1 });
     expect(notFoundTitle).toBeInTheDocument();
   });
 });
