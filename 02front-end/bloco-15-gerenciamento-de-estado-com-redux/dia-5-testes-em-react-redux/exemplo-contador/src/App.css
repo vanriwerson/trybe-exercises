@@ -1,0 +1,25 @@
+.App {
+  align-items: center;
+  background-color: #2b2727;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 20px;
+  width: 100vw;
+}
+
+.App button {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bolder;
+  margin: 20px;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.counter {
+  font-size: 40px;
+  font-weight: bolder;
+}
