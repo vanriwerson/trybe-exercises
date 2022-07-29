@@ -11,6 +11,7 @@
 
 # ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
+# A criação em múltiplos estágios entrega uma imagem final mais limpa
 # Primeiro Estágio
 FROM alpine:3.14 AS primeiro-estagio
 WORKDIR /site
