@@ -1,0 +1,26 @@
+  version: '3'
+
+  services:
+    ghost:
+      image: ghost:1-alpine
+      restart: always
+      ports:
+        - 2368:2368
+      depends_on:
+        - "db"
+      environment:
+        # see https://ghost.org/docs/config/
+        database__client: mysql
+        database__connection__host: db
+        database__connection__user: root
+        database__connection__password: password
+        database__connection__database: ghost
+
+    db:
+      image: mysql:5.7
+      environment:
+        MYSQL_ROOT_PASSWORD: password
+
+# Starts with: docker-compose up
+# See on: 'http://localhost:2368'
+# Stops with: docker-compose down
