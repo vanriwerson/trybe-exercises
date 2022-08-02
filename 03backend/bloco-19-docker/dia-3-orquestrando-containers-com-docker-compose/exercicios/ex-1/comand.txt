@@ -1,0 +1,16 @@
+Run container with: docker run -d --name exercicio-1 -p 4545:80 -v "$(pwd):/usr/local/apache2/htdocs" httpd:2.4
+See it runing on: http://localhost:4545/missao_trybe.html
+
+See the container info: docker inspect <name_or_hash>
+
+Mounts result for exercicio-1:
+"Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/home/vanr/TrybeCourse/trybe-exercises/03backend/bloco-19-docker/dia-3-orquestrando-containers-com-docker-compose/exercicios",
+                "Destination": "/usr/local/apache2/htdocs",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
