@@ -6,8 +6,12 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 COPY package.json /app/package.json
 RUN npm install
+
+# COPY ./src /app/src
+# EXPOSE 3000
 RUN npm install react-scripts@3.3.1 -g
 
+# ENTRYPOINT [ "npm"]
 CMD ["npm", "start"]
 
 # Build with: docker build -t sample:dev .
