@@ -10,15 +10,15 @@ const bmi = calculateBMI(weight, height);
 console.log(`Your BMI is ${bmi.toFixed(2)}`);
 
 if (bmi < 18.5) {
-  console.log("Abaixo do peso");
+  console.log("Status: Underweight (thin)");
 } else if (bmi >= 18.5 && bmi < 25) {
-  console.log("Peso normal");
+  console.log("Status: Normal weight");
 } else if (bmi >= 25 && bmi < 30) {
-  console.log("Sobrepeso");
+  console.log("Status: Overweight");
 } else if (bmi >= 30 && bmi < 35) {
-  console.log("Obesidade grau I");
+  console.log("Status: Grade I obesity");
 } else if (bmi >= 35 && bmi < 40) {
-  console.log("Obesidade grau II");
+  console.log("Status: Grade II obesity");
 } else {
-  console.log("Obesidade mórbida");
+  console.log("Status: Morbid Obesity");
 }
