@@ -1,0 +1,15 @@
+{
+  "name": "first-package-nodejs",
+  "version": "1.0.0",
+  "description": "My first Nodejs package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Bruno Riwerson Silva",
+  "license": "ISC",
+  "dependencies": {
+    "dog-names": "^2.1.0"
+  }
+}
