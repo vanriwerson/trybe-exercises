@@ -11,16 +11,12 @@ const calculate = () => {
   switch (operator) {
     case "*":
       return multiply(stNum, ndNum);
-      break;
     case "/":
       return divide(stNum, ndNum);
-      break;
     case "+":
       return sum(stNum, ndNum);
-      break;
     case "-":
       return subtract(stNum, ndNum);
-      break;
     default:
       return "ERROR";
   }
