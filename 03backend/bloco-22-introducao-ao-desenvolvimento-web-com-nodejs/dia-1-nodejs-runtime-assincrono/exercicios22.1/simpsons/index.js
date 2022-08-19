@@ -53,6 +53,23 @@ const addChar = async () => {
   await fs.writeFile("./simpsons.json", JSON.stringify([...chars, newChar]));
 };
 
+const replaceChar = async () => {
+  const data = await fs.readFile("./simpsons.json");
+  const chars = JSON.parse(data);
+
+  const remainingChars = chars.filter((char) => char.id !== "8");
+
+  const replacingChar = {
+    id: "15",
+    name: "Magie Simpson",
+  };
+
+  await fs.writeFile(
+    "./simpsons.json",
+    JSON.stringify([...remainingChars, replacingChar])
+  );
+};
+
 async function main() {
   try {
     await listSimpsonsChars();
@@ -63,6 +80,8 @@ async function main() {
     const firstFourChars = await getFirstFourChars();
     await listSimpsonsChars();
     await addChar();
+    await listSimpsonsChars();
+    await replaceChar();
     await listSimpsonsChars();
   } catch (err) {
     console.error(`Erro ao ler o arquivo: ${err.message}`);
