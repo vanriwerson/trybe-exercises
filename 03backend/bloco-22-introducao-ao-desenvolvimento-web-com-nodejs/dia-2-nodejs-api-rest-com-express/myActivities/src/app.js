@@ -40,4 +40,13 @@ app.get('/filter/myActivities/', (req, res) => {
 });
 // See in the browser with: http://localhost:3001/filter/myActivities/?status=A%20fazer
 
+app.get('/search/myActivities/', (req, res) => {
+  const { q } = req.query;
+  console.log(req.query);
+  const filteredActivities = activities.filter((activity) => activity.description.includes(q));
+
+  res.status(200).json({ filteredActivities });
+});
+// See in the browser with: http://localhost:3001/search/myActivities/?q=ca returns: Banho no cachorro
+
 module.exports = app;
