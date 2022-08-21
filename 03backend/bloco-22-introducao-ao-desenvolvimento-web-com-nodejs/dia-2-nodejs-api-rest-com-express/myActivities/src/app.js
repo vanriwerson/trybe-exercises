@@ -22,6 +22,7 @@ const app = express();
 
 app.use(express.json());
 
+app.get('/myActivities', (req, res) => res.status(200).json({ activities }));
 app.get('/myActivities/:id', (req, res) => {
   const { id } = req.params;
   const selectedActivity = activities.find((activity) => activity.id === Number(id));
