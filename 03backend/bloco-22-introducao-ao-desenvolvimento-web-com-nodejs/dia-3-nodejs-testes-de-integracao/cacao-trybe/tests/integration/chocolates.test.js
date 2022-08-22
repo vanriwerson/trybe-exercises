@@ -80,7 +80,7 @@ describe("Testando a API Cacao Trybe", function () {
       };
 
       expect(response.status).to.be.equal(200);
-      expect(response.body.totalChocolates).to.deep.equal(output);
+      expect(response.body).to.deep.equal(output);
     });
   });
 
@@ -111,7 +111,7 @@ describe("Testando a API Cacao Trybe", function () {
     it('Retorna um array vazio caso não encontre nenhum chocolate', async function () {
       const response = await chai
         .request(app)
-        .get('/chocolates/search?name=ZZZ');
+        .get('/chocolates/search?name=xablau');
 
       const NOT_FOUND = 404;
 

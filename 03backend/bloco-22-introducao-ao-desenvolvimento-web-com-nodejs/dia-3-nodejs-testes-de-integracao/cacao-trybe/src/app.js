@@ -13,6 +13,14 @@ app.get('/chocolates/total', async (req, res) => {
   res.status(200).json({ totalChocolates: chocolates.length });
 });
 
+app.get('/chocolates/search', async (req, res) => {
+  const { name } = req.query;
+  const chocolates = await cacaoTrybe.getChocolateByName(name);
+  res.status(chocolates.length === 0 ? 404 : 200)
+    .json(chocolates);
+});
+// See on browser with: http://localhost:3001/chocolates/search/?name=mo
+
 app.get('/chocolates/:id', async (req, res) => {
   const { id } = req.params;
   const chocolate = await cacaoTrybe.getChocolateById(Number(id));
