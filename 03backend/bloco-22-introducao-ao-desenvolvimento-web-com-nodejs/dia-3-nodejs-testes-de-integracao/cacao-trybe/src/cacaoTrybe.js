@@ -11,6 +11,15 @@ const readCacaoTrybeFile = async () => {
   }
 };
 
+const writeCacaoTrybeFile = async (content) => {
+  try {
+    await fs.writeFile('./files/cacaoTrybeFile.json', content);
+    console.log('Arquivo escrito com sucesso!');
+  } catch (err) {
+    console.error(`Erro ao escrever o arquivo: ${err.message}`);
+  }
+};
+
 const getAllChocolates = async () => {
   const cacaoTrybe = await readCacaoTrybeFile();
   return cacaoTrybe.chocolates;
@@ -34,9 +43,29 @@ const getChocolateByName = async (name) => {
     .filter((chocolate) => chocolate.name.toLowerCase().includes(name.toLowerCase()));
 };
 
+const updateChocolate = async (id, update) => {
+  const cacaoTrybe = await readCacaoTrybeFile();
+  const chocolateToUpdate = cacaoTrybe.chocolates.find(
+    (chocolate) => chocolate.id === id,
+  );
+
+  if (chocolateToUpdate) {
+    cacaoTrybe.chocolates = cacaoTrybe.chocolates.map((chocolate) => {
+        if (chocolate.id === id) return { ...chocolate, ...update };
+        return chocolate;
+      });
+  
+    await writeCacaoTrybeFile(cacaoTrybe);
+    return { ...chocolateToUpdate, ...update };
+  }
+
+  return false;
+};
+
 module.exports = {
   getAllChocolates,
   getChocolateById,
   getChocolatesByBrand,
   getChocolateByName,
+  updateChocolate,
 };
