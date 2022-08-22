@@ -20,4 +20,9 @@ app.get('/chocolates/brand/:brandId', async (req, res) => {
   res.status(200).json({ chocolates });
 });
 
+app.get('/chocolates/total', async (req, res) => {
+  const totalChocolates = await cacaoTrybe.getTotalChocolates();
+  res.status(200).json({ totalChocolates });
+});
+
 module.exports = app;
