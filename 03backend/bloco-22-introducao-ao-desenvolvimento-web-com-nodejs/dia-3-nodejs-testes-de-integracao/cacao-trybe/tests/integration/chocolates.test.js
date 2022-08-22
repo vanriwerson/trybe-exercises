@@ -79,6 +79,7 @@ describe("Testando a API Cacao Trybe", function () {
         "totalChocolates": 4
       };
 
+      expect(response.status).to.be.equal(200);
       expect(response.body.totalChocolates).to.deep.equal(output);
     });
   });
