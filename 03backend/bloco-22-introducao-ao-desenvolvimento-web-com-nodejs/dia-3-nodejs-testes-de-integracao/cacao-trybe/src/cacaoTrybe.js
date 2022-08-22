@@ -13,7 +13,7 @@ const readCacaoTrybeFile = async () => {
 
 const writeCacaoTrybeFile = async (content) => {
   try {
-    await fs.writeFile('./files/cacaoTrybeFile.json', content);
+    await fs.writeFile('/files/cacaoTrybeFile.json', content);
     console.log('Arquivo escrito com sucesso!');
   } catch (err) {
     console.error(`Erro ao escrever o arquivo: ${err.message}`);

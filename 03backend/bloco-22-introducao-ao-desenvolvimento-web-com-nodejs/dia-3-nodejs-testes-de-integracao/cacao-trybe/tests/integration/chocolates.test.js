@@ -140,7 +140,7 @@ describe("Testando a API Cacao Trybe", function () {
     it('Gera um erro caso o chocolate não exista', async function () {
       const response = await chai
         .request(app)
-        .put('/chocolates/555').send({
+        .put('/chocolates/220').send({
         name: 'Mint Pretty Good',
         brandId: 2,
         });
