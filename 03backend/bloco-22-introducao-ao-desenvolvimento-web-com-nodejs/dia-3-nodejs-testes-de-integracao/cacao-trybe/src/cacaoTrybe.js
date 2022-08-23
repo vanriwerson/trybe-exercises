@@ -12,8 +12,9 @@ const readCacaoTrybeFile = async () => {
 };
 
 const writeCacaoTrybeFile = async (content) => {
+  const path = "/files/cacaoTrybeFile.json";
   try {
-    await fs.writeFile('/files/cacaoTrybeFile.json', content);
+    await fs.writeFile(join(__dirname, path), JSON.stringify(content));
     console.log('Arquivo escrito com sucesso!');
   } catch (err) {
     console.error(`Erro ao escrever o arquivo: ${err.message}`);
