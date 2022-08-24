@@ -1,7 +1,9 @@
 const express = require('express');
 const {activities, users } = require('./files/ecoturismoDB.json');
 
+const auth = require('./middlewares/auth');
 const validate = require('./middlewares');
+const generateToken = require('./utils/generateToken');
 
 const app = express();
 app.use(express.json());
@@ -10,7 +12,12 @@ app.get('/activities', async (_req, res) => {
   res.status(200).json({ activities });
 });
 
+app.get('/users', async (_req, res) => {
+  res.status(200).json({ users });
+});
+
 app.post('/activities',
+  auth,
   validate.Difficulty,
   validate.Rating,
   validate.CreatedAt,  
@@ -50,6 +57,12 @@ app.post('/signup', (_req, res) => {
   if ([email, password, firstName, phone].includes(undefined)) {
     return res.status(401).json({ message: 'Campos ausentes!' });
   }
+
+  const token = generateToken();
+  const authorizedUser = { ...req.body, token };
+  users.push(authorizedUser);
+
+  return res.status(200).json({ token });
 });
 
 module.exports = app;
