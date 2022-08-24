@@ -1,5 +1,5 @@
 {
   "watch": ["*.js"],
 	"ext": "js",
-  "ignore": ["*.json", "**/files/**"]
+  "ignore": ["/src/files/cacaoTrybeFile.json"]
 }
