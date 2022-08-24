@@ -1,13 +1,15 @@
-const validateRating = require('./validateRating');
-const validateCreatedAt = require('./validateCreatedAt');
-const validateDescription = require('./validateDescription');
-const validateName = require('./validateName');
-const validatePrice = require('./validatePrice');
+const Difficulty = require('./validateDifficulty');
+const Rating = require('./validateRating');
+const CreatedAt = require('./validateCreatedAt');
+const Description = require('./validateDescription');
+const Name = require('./validateName');
+const Price = require('./validatePrice');
 
 module.exports = {
-  validateRating,
-  validateCreatedAt,  
-  validateDescription,  
-  validateName,
-  validatePrice
+  Difficulty,
+  Rating,
+  CreatedAt,  
+  Description,  
+  Name,
+  Price
 };

@@ -1,20 +1,7 @@
 const express = require('express');
 const activities = require('./files/activities.json');
-const validateDifficulty = require('./middlewares/validateDifficulty');
-const validateRating = require('./middlewares/validateRating');
-const validateCreatedAt = require('./middlewares/validateCreatedAt');
-const validateDescription = require('./middlewares/validateDescription');
-const validateName = require('./middlewares/validateName');
-const validatePrice = require('./middlewares/validatePrice');
 
-// const {
-//   validateDifficulty,
-//   validateRating,
-//   validateCreatedAt,  
-//   validateDescription,  
-//   validateName,
-//   validatePrice
-// } = require('./middlewares');
+const validate = require('./middlewares');
 
 const app = express();
 app.use(express.json());
@@ -24,12 +11,12 @@ app.get('/activities', async (_req, res) => {
 });
 
 app.post('/activities',
-  validateDifficulty,
-  validateRating,
-  validateCreatedAt,  
-  validateDescription,  
-  validateName,
-  validatePrice,
+  validate.Difficulty,
+  validate.Rating,
+  validate.CreatedAt,  
+  validate.Description,  
+  validate.Name,
+  validate.Price,
   (req, res) => {
   const activity = { ...req.body };
   activities.push(activity);
