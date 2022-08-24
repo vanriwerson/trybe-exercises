@@ -23,4 +23,25 @@ app.post('/activities',
   res.status(201).json({ message: 'Atividade registrada com sucesso!' });
 });
 
+app.put('/activities',
+  validate.Difficulty,
+  validate.Rating,
+  validate.CreatedAt,  
+  validate.Description,  
+  validate.Name,
+  validate.Price,
+  (req, res) => {
+  
+  const activityToUpdate = activities.find((a) => a.name === req.body.name);
+  
+  if (activityToUpdate) {
+    const index = activities.indexOf(activityToUpdate);
+    const updated = { ...req.body };
+    activities.splice(index, 1, updated);
+    res.status(201).json({ message: 'Atividade atualizada com sucesso!' });
+  } else {
+    res.sendStatus(400);
+  }
+});
+
 module.exports = app;
