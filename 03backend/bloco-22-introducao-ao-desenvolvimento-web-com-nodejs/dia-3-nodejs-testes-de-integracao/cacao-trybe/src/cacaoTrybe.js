@@ -45,6 +45,7 @@ const getChocolateByName = async (name) => {
 };
 
 const updateChocolate = async (id, update) => {
+  console.log(id, update);
   const cacaoTrybe = await readCacaoTrybeFile();
   const chocolateToUpdate = cacaoTrybe.chocolates.find(
     (chocolate) => chocolate.id === id,
