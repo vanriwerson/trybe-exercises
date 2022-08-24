@@ -5,7 +5,8 @@ const app = express();
 
 app.put('/chocolates/:id', async (req, res) => {
   const { id } = req.params;
-  const { name, brandId } = req.body;
+  console.log(req.body);
+  const { name='Chocolate', brandId=2 } = req.body;
   const updatedChocolate = await cacaoTrybe.updateChocolate(Number(id), { name, brandId });
 
   if (updatedChocolate) return res.status(200).json({ chocolate: updatedChocolate });
