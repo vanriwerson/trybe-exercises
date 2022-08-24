@@ -1,8 +1,9 @@
 const fs = require("fs").promises;
 const { join } = require("path");
 
+const path = "/files/cacaoTrybeFile.json";
+
 const readCacaoTrybeFile = async () => {
-  const path = "/files/cacaoTrybeFile.json";
   try {
     const contentFile = await fs.readFile(join(__dirname, path), "utf-8");
     return JSON.parse(contentFile);
@@ -12,7 +13,6 @@ const readCacaoTrybeFile = async () => {
 };
 
 const writeCacaoTrybeFile = async (content) => {
-  const path = "/files/cacaoTrybeFile.json";
   try {
     await fs.writeFile(join(__dirname, path), JSON.stringify(content));
     console.log('Arquivo escrito com sucesso!');
