@@ -1,5 +1,5 @@
 const express = require('express');
-const activities = require('./files/activities.json');
+const {activities, users } = require('./files/ecoturismoDB.json');
 
 const validate = require('./middlewares');
 
