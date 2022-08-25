@@ -2,7 +2,7 @@
   "name": "cacao-trybe",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha ./tests/integration --exit",
     "start": "node src/server.js",
