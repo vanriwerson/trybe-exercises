@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  db:
+    container_name: n_n_associations_example_db
+    image: mysql:8.0.23
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_HOST: localhost
+    ports:
+      - 3306:3306

@@ -1,7 +1,7 @@
 // src/models/User.js
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    userId: { type: DataTypes.INTEGER, primaryKey: true },
+    id: { type: DataTypes.INTEGER, primaryKey: true },
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     age: DataTypes.INTEGER,
