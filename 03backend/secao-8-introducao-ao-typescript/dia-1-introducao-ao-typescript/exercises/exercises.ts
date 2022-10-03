@@ -25,3 +25,18 @@ export function square(side: number): number {
 export function rectangle(base: number, height: number): number {
   return base * height;
 }
+
+// Crie uma nova função para calcular a área de um losango
+export function losangle(majDiagonal: number, minDiagonal: number): number {
+  return majDiagonal * minDiagonal / 2;
+}
+
+// Crie uma nova função para calcular a área de um trapézio
+export function trapeze(majBase: number, minBase: number, height: number): number {
+  return ((majBase + minBase) * height) / 2;
+}
+
+// Crie uma nova função para calcular a área de um círculo
+export function circle(radius: number): number {
+  return Math.PI * Math.pow(radius, 2);
+}

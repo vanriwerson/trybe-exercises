@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
+exports.circle = exports.trapeze = exports.losangle = exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
 function greeter(name) {
     return `Olá, ${name}!`;
 }
@@ -29,3 +29,18 @@ function rectangle(base, height) {
     return base * height;
 }
 exports.rectangle = rectangle;
+// Crie uma nova função para calcular a área de um losango
+function losangle(majDiagonal, minDiagonal) {
+    return majDiagonal * minDiagonal / 2;
+}
+exports.losangle = losangle;
+// Crie uma nova função para calcular a área de um trapézio
+function trapeze(majBase, minBase, height) {
+    return ((majBase + minBase) * height) / 2;
+}
+exports.trapeze = trapeze;
+// Crie uma nova função para calcular a área de um círculo
+function circle(radius) {
+    return Math.PI * Math.pow(radius, 2);
+}
+exports.circle = circle;
