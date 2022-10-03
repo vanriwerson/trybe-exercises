@@ -40,3 +40,36 @@ export function trapeze(majBase: number, minBase: number, height: number): numbe
 export function circle(radius: number): number {
   return Math.PI * Math.pow(radius, 2);
 }
+
+// Bônus:
+// Crie uma Enum que represente os dias da semana. Seu valor deve ser o número do dia
+enum weekDays {
+  sunday = 1,
+  monday,
+  tuesday,
+  wednesday,
+  thursday,
+  friday,
+  saturday,
+}
+
+export function printWeekDays(): void {
+  Object.entries(weekDays).map((entry) => console.log(entry[0], entry[1]),
+  );
+}
+
+// Crie uma Enum que represente as cores do arco-íris. Seu valor deve ser o nome das cores em português
+enum rainbowColors {
+  red = "vermelho",
+  orange = "laranja",
+  yellow = "amarelo",
+  green = "verde",
+  blue = "azul",
+  darkBlue = "anil",
+  violet = "violeta",
+}
+
+export function printRainbowColors(): void {
+  Object.entries(rainbowColors).map((entry) => console.log(entry[0], entry[1]),
+  );
+}

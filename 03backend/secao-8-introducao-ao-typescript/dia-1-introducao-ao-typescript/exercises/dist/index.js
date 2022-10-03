@@ -48,3 +48,7 @@ console.log(`Trapézio que tem B = 150cm, b = 120cm e altura = 80cm: ${Exercise.
 console.log(`Círculo de raio igual a 25cm: ${Exercise.circle(25)}cm²`);
 console.log(`Círculo de raio igual a 100cm: ${Exercise.circle(100)}cm²`);
 console.log(`Círculo de raio igual a 12,5cm: ${Exercise.circle(12.5)}cm²`);
+// Bônus1 => printWeekDays()
+Exercise.printWeekDays();
+// Bônus2 => printRainbowColors()
+Exercise.printRainbowColors();
