@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  db:
+    container_name: express_typescript_db
+    image: mysql:8.0.23
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: books_api
+      MYSQL_HOST: localhost
+    ports:
+      - 3306:3306
