@@ -37,6 +37,14 @@ class BooksController {
     res.status(statusCodes.OK).json({ message: 'Book updated successfully.' });
   };
 
+  public partialUpdate = async (req: Request, res: Response) => {
+    const id = Number(req.params.id);
+    const book = req.body;
+    await this.bookService.partialUpdate(id, book);
+
+    res.status(statusCodes.NO_CONTENT).end();
+  };
+
   public remove = async (req: Request, res: Response) => {
     const id = Number(req.params.id);
     await this.bookService.remove(id);

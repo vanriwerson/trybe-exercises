@@ -42,6 +42,16 @@ export default class BookModel {
     );
   }
 
+  public async partialUpdate(id: Required<Book>["id"], book: Partial<Book>) { // Partial torna os atributos do tipo Book opcionais
+    const updateFields = Object.keys(book).map(field => `${field}=?`).join(", ");
+    const updateValues = Object.values(book);
+
+    await this.connection.execute(
+      `UPDATE books SET ${updateFields} WHERE id=?`,
+      [...updateValues, id]
+    );
+  }
+
   public async remove(id: number) {
     await this.connection.execute(
       'DELETE FROM books WHERE id=?',

@@ -24,7 +24,7 @@ function validateValues(book: Book): [boolean, string | null] {
   return [true, null];
 }
 
-function validationBook(req: Request, res: Response, next: NextFunction) {
+function validateBook(req: Request, res: Response, next: NextFunction) {
   const book: Book = req.body;
 
   let [valid, property] = validateProperties(book);
@@ -46,4 +46,22 @@ function validationBook(req: Request, res: Response, next: NextFunction) {
   next();
 }
 
-export default validationBook;
+function differenceBetweenArrays(arr1: unknown[], arr2: unknown[]) {
+  return arr1.filter(x => !arr2.includes(x));
+}
+
+function validatePartialBook(req: Request, res: Response, next: NextFunction) {
+  const book: Partial<Book> = req.body;
+  const difference = differenceBetweenArrays(Object.keys(book), properties);
+  const isValidBook = difference.length === 0;
+
+  if (!isValidBook) {
+    return res.status(statusCodes.BAD_REQUEST).send(
+      `Os campos ${difference} não existem no tipo Book.`,
+    );
+  }
+
+  next();
+}
+
+export { validateBook, validatePartialBook };

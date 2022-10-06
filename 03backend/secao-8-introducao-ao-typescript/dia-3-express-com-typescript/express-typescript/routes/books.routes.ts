@@ -1,20 +1,20 @@
 import { Router } from 'express';
 import BooksController from '../controllers/books.controller';
-import validationBook from '../middlewares/books.middleware';
+import { validateBook, validatePartialBook } from '../middlewares/books.middleware';
 
 const router = Router();
-
+const booksIdRoute = '/books/:id';
 const booksController = new BooksController();
 
-const booksIdRoute = '/books/:id';
+router.post('/books', validateBook, booksController.create);
 
 router.get('/books', booksController.getAll);
 
 router.get(booksIdRoute, booksController.getById);
 
-router.post('/books/', validationBook, booksController.create);
+router.put(booksIdRoute, validateBook, booksController.update);
 
-router.put(booksIdRoute, validationBook, booksController.update);
+router.patch(booksIdRoute, validatePartialBook, booksController.partialUpdate);
 
 router.delete(booksIdRoute, booksController.remove);
 
