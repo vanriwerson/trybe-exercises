@@ -3,9 +3,16 @@ import Person from './Person';
 import Student from "./Student";
 import Data from "./Date";
 
-const student = new Student('01ADS11102022', 'Bruno', [5, 6, 7, 8], [9, 10]);
+const student = new Student('Bruno', new Date('1989/12/03'), '01ADS11102022');
+student.testGrades = [6, 7, 8, 9];
+student.workGrades = [9, 9];
+console.log(student);
 console.log(student.getGradesSum());
 console.log(student.getAverage());
+
+const otherStudent = new Student('Morris', new Date('2005/12/31'), student.generateRegistry());
+console.log(otherStudent);
+
 
 const order = new Order('Bruno', [{item: 'coxinha', price: 5}, {item: 'suco', price: 5}], 'dinheiro', 0.1);
 console.log(order.getTotalConsumption());
