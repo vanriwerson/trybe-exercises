@@ -52,3 +52,18 @@ const showIdentification = (person: Person) => {
 showIdentification(pp0);
 showIdentification(pp1);
 showIdentification(lp);
+
+// Utilizando Generics:
+class Contract<T> { // A classe recebe o genérico T
+  static _number = 0;
+  constructor(public broker: T) { } // T no lugar de Person
+  static get number() { return this._number; }
+}
+
+// Tipo inferido (não explícito)
+const c1 = new Contract(pp0); // TypeScript "advinha" que pp0 é pessoa física
+console.log(c1.broker.cpf); // Okay
+
+// Tipagem explícita
+const c2: Contract<LegalPerson> = new Contract(lp); // Deixo explícito que lp é pessoa jurídica
+console.log(c2.broker.cnpj); // Okay
