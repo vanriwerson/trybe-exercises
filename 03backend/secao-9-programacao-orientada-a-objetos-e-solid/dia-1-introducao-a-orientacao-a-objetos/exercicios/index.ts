@@ -1,4 +1,5 @@
 import Order from "./Order";
+import Person from './Person';
 import Student from "./Student";
 import Data from "./Date";
 
@@ -34,9 +35,15 @@ const compareStates = ['anterior', 'igual', 'posterior'];
 console.log(`A primeira data é ${compareStates[compared + 1]} a segunda.`);
 
 // data inválida
-const invalidDate = new Data(31, 2, 2021);
+// const invalidDate = new Data(31, 2, 2021);
 
-console.log('Teste data inválida: ', invalidDate);
+// console.log('Teste data inválida: ', invalidDate);
 
 // formato inválido
-console.log(invalidDate.format('a m d'));
+// console.log(invalidDate.format('a m d'));
+
+const maria = new Person('Maria da Consolação', new Date('1980/01/25'));
+const luiza = new Person('Luiza Andrade', new Date('2005/10/02'));
+
+console.log(maria);
+console.log(luiza);
