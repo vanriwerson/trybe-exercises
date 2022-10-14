@@ -37,7 +37,7 @@
 5. Criando arquivo de configuração do Typescript:
   `npx tsc --init`
 
-6. adicionar arquivo .eslintrc.json na raiz do projeto co o seguinte conteúdo:
+6. Adicionar arquivo .eslintrc.json na raiz do projeto co o seguinte conteúdo:
   `
   {
     "root": true,
