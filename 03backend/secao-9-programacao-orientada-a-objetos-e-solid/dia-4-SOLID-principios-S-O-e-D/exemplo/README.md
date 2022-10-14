@@ -1,14 +1,17 @@
-1. Iniciando pacote node aceitando as os padrões:
+1. Iniciando pacote node aceitando os padrões:
   `npm init -y`
 
 2. Adicionando scripts ao package.json:
-  `  "scripts": {
+  `
+  "scripts": {
     "test": "mocha -r ts-node/register ./tests/**/*.{test,spec}.[t,j]s",
     "lint": "eslint  -c .eslintrc.json src/**/*.[t,j]s"
-  },`
+  },
+  `
 
 3. Adicionando dependências utilizadas nesse exemplo:
-  `"devDependencies": {
+  `
+  "devDependencies": {
     "typescript": "4.4.2",
     "ts-node": "10.2.1",
     "eslint": "7.32.0",
@@ -25,7 +28,8 @@
     "@types/mocha": "9.0.0",
     "@types/node": "17.0.35",
     "@types/sinon": "10.0.2"
-  },`
+  },
+  `
 
 4. Instalando dependências:
   `npm i`
@@ -34,7 +38,8 @@
   `npx tsc --init`
 
 6. adicionar arquivo .eslintrc.json na raiz do projeto co o seguinte conteúdo:
-  `{
+  `
+  {
     "root": true,
     "extends": [
         "eslint:recommended",
@@ -56,7 +61,8 @@
         "@typescript-eslint/no-shadow": "error",
         "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
     }
-  }`
+  }
+  `
 
 7. Criar a estrutura de pastas necessária:
   `mkdir tests src && touch src/index.ts`
