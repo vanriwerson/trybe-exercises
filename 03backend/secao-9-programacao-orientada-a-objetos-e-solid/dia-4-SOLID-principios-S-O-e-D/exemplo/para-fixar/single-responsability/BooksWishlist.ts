@@ -1,5 +1,3 @@
-// BooksWishlist.ts
-
 type Book = {
   book: string;
   author: string;

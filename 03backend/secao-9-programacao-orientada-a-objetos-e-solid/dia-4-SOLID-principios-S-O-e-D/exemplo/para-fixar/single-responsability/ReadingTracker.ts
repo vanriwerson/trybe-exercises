@@ -1,8 +1,4 @@
-// ReadingTracker.ts
-
-function progressNotification(message: string): void {
-  console.log(message);
-}
+import readingTrackerNotification from './notifications';
 
 class ReadingTracker {
   private readingGoal: number;
@@ -15,12 +11,12 @@ class ReadingTracker {
   trackReadings(readsCount: number): void {
     this.booksRead += readsCount;
     if (this.booksRead >= this.readingGoal) {
-      progressNotification(
+      readingTrackerNotification(
         'Congratulations! You\'ve reached your reading goal!',
       );
       return;
     }
-    progressNotification(
+    readingTrackerNotification(
       'There are still some books to go!',
     );
   }
