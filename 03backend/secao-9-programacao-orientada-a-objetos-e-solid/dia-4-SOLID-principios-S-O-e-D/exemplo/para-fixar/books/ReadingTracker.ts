@@ -1,6 +1,8 @@
 // ReadingTracker.ts
 
-import progressNotification from './notifications';
+function progressNotification(message: string): void {
+  console.log(message);
+}
 
 class ReadingTracker {
   private readingGoal: number;

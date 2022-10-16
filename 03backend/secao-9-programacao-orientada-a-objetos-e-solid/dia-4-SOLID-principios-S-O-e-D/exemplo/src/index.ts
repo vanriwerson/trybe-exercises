@@ -66,5 +66,3 @@ export {
   setApproved,
   getLetterGrades,
 };
-
-// Run with: npx ts-node src
