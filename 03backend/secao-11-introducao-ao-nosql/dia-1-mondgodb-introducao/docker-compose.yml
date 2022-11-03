@@ -1,0 +1,15 @@
+# rodar via linha de comando com persistência de dados: (lembrete portas - exposta:container)
+# docker run --name mongodb_docker -v $(pwd)/backup:/data/db -p 8080:27017 -d mongo
+
+# mongoimport --port 8080 -d harry_potter -c characters --jsonArray --file harry_potter.json
+
+version: '3.1'
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 8080:27017
+    volumes:
+      - ./backup:/data/db

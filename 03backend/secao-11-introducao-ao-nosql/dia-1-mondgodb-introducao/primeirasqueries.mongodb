@@ -1,0 +1,5 @@
+use('mongodbVSCodePlaygroundDB');
+db.sales.find(); // traz todos os dados da collection
+
+use('mongodbVSCodePlaygroundDB');
+db.sales.countDocuments({ item: "abc" }); // traz a contagem de documentos. aceita filtros
