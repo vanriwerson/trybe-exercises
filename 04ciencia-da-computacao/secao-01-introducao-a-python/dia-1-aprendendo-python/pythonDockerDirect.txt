@@ -1,0 +1,5 @@
+Opção para projetos de arquivo único:
+
+docker run -it --rm --name nome-do-seu-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp python:3 python seu-arquivo.py
+# -v "$PWD":/usr/src/myapp - monta o diretório atual para dentro do contêiner
+# -w /usr/src/myapp - muda o WORKDIR para executar o comando no diretório recém montado.
