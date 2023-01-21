@@ -1,0 +1,2 @@
+O uso de ponto e vírgula no final de uma instrução é permitido pelo python.
+Porém, é convenção da comunidade não utilizar.

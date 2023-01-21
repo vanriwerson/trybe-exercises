@@ -1,0 +1,12 @@
+No terminal, inicialize duas variáveis a e b, sendo a = 10 e b = 5.
+Mostre o resultado das 7 operações básicas envolvendo essas variáveis.
+
+a = 10
+b = 5
+a + b
+a - b
+a * b
+a / b
+a // b
+a ** b
+a % b

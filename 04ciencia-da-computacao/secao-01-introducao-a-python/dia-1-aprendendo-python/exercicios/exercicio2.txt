@@ -1,0 +1,9 @@
+Declare e inicialize uma variável hours = 6. 
+Inicialize e imprima as variáveis minutes e seconds,
+fazendo a conversão de hours para minutos e segundos.
+
+hours = 6
+minutes = hours * 60
+seconds = minutes * 60
+minutes
+seconds
