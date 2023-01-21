@@ -1,0 +1,22 @@
+# Compreensão de listas:
+min_rating = 3.0
+filtered_restaurants = [restaurant
+                         for restaurant in restaurants
+                         if restaurant["nota"] > min_rating]
+print(filtered_restaurants)  # imprime a lista de restaurantes, sem o B e D
+
+A compreensão de listas também funciona com listas de strings.
+A seguinte cria uma nova lista de strings com os nomes que contém a letra ‘a’.
+
+names_list = ['Duda', 'Rafa', 'Cris', 'Yuri']
+new_names_list = [name for name in names_list if 'a' in name]
+
+# Aqui o for percorre cada nome em "names_list", verifica se existe a letra "a" nele,
+# o adiciona à variável "name", e então gera nossa nova lista "new_names_list"
+print(new_names_list)
+
+O exemplo a seguir usa uma compreensão de listas para
+criar uma lista com o quadrado dos números entre 1 e 10.
+
+quadrados = [x*x for x in range(11)]
+print(quadrados)
