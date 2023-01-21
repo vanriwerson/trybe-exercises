@@ -1,0 +1,7 @@
+Inicialize uma variável com a função var = set() e adicione seu nome ao conjunto
+utilizando um dos métodos vistos anteriormente.
+Depois, imprima a variável e confira se o retorno é: {‘seu_nome’}.
+
+new_set = set()
+new_set.add("Bruno")
+new_set

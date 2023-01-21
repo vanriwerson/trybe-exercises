@@ -1,0 +1,8 @@
+lista base:
+trybe_course = ["Introdução", "Front-end", "Back-end"]
+
+Adicione o elemento “Ciência da Computação” à lista.
+trybe_course.append("Ciência da Computação")
+
+Acesse e altere o primeiro elemento da lista para “Fundamentos”.
+trybe_course[0] = "Fundamentos"
