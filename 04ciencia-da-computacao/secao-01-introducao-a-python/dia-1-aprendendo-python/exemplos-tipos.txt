@@ -1,0 +1,9 @@
+int
+float
+str
+
+Algumas estruturas de dados:
+-sequência: list, tuple, range;
+-conjuntos: set, frozenset;
+-mapeamento: dict (análogo aos objetos javascript);
+-sequências binárias: bytes, bytearray, memoryview
