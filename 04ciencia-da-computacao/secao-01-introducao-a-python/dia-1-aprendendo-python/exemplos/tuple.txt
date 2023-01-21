@@ -1,0 +1,7 @@
+São similares a listas, porém não podem ser modificados durante a execução do programa.
+
+# elementos são definidos separados por vírgula, envolvidos por parênteses
+python_student = ("Bruno", "Riwerson", 33)
+
+# o acesso também é feito por índices
+python_student[0]

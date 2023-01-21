@@ -1,0 +1,20 @@
+Um conjunto é uma coleção de elementos únicos e não ordenados.
+Conjuntos implementam operações de união, intersecção e outras.
+
+# elementos separados por vírgula, envolvidos por chaves
+permissions = {"member", "group"}
+
+# adiciona um novo elemento ao conjunto
+permissions.add("root")
+
+# como o elemento já existe, nenhum novo item é adicionado ao conjunto
+permissions.add("member")
+
+# retorna um conjunto resultado da união
+permissions.union({"user"})
+
+# retorna um conjunto resultante da intersecção dos conjuntos
+permissions.intersection({"user", "member"})
+
+# retorna a diferença entre os dois conjuntos
+permissions.difference({"user"})
